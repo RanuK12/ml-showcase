@@ -1,0 +1,207 @@
+{
+  "date": "2026-06-05",
+  "scraped_by": "Ranukita Bot",
+  "min_budget": 200,
+  "total_gigs": 12,
+  "gigs": [
+    {
+      "id": 1,
+      "title": "High-Freq Python Engineer – Multi-Account Bot (Rithmic R-API+)",
+      "platform": "Upwork",
+      "budget": "$3,000 Fixed",
+      "budget_usd": 3000,
+      "posted": "2026-04-25",
+      "description": "Build high-performance Python execution engine for 10+ accounts using Rithmic R-API+. Trades Crude Oil (CL) based on AI signals.",
+      "requirements": [
+        "Python",
+        "Rithmic R-API+",
+        "MBO data parsing",
+        "Multi-account"
+      ],
+      "apply_url": "https://www.upwork.com/freelance-jobs/apply/High-Frequency-Python-Engineer-Multi-Account-Bot-Rithmic-API_~022048113982162663175/",
+      "match_score": 85
+    },
+    {
+      "id": 2,
+      "title": "Data Scraper & Automation Specialist (Blockchain API)",
+      "platform": "Upwork",
+      "budget": "$3,000 Fixed",
+      "budget_usd": 3000,
+      "posted": "2026-06-03",
+      "description": "Web scraping + data structuring expert for content pipeline automation with blockchain API integration.",
+      "requirements": [
+        "Web scraping",
+        "Data structuring",
+        "Blockchain API",
+        "Automation"
+      ],
+      "apply_url": "https://www.upwork.com/nx/search/jobs/?q=scraping&page=3",
+      "match_score": 90
+    },
+    {
+      "id": 3,
+      "title": "Python/Playwright Web Scraping — Hotel Rate Monitoring",
+      "platform": "Upwork",
+      "budget": "Hourly 30+ hrs/wk",
+      "budget_usd": null,
+      "posted": "2026-06-03",
+      "description": "Production-grade hotel rate monitoring with Python and Playwright. 1-3 month engagement.",
+      "requirements": [
+        "Python",
+        "Playwright",
+        "Web scraping",
+        "Production deploy"
+      ],
+      "apply_url": "https://www.upwork.com/freelance-jobs/python-script/",
+      "match_score": 88
+    },
+    {
+      "id": 4,
+      "title": "Sr Python Backend Dev for TG Bot (High-Scale Data Automation)",
+      "platform": "Upwork",
+      "budget": "Hourly 6+ months",
+      "budget_usd": null,
+      "posted": "2026-06-01",
+      "description": "Senior Python backend for Telegram bot. High-scale data automation, Docker, PDF/document ops.",
+      "requirements": [
+        "Python Telegram bots",
+        "Linux/Docker",
+        "Git/PR workflow",
+        "Document automation"
+      ],
+      "apply_url": "https://www.upwork.com/freelance-jobs/apply/Senior-Python-Backend-Developer-for-TELEG-Bot-High-Scale-Data-Automation_~022014745712360590480/",
+      "match_score": 92
+    },
+    {
+      "id": 5,
+      "title": "Backend / Automation Engineer (Ongoing Contract)",
+      "platform": "Upwork",
+      "budget": "$5-30/hr retainer",
+      "budget_usd": 500,
+      "posted": "2026-06-03",
+      "description": "Ongoing automation engineering for SaaS products. AI bots, API integration, code generation. Part-time with growth.",
+      "requirements": [
+        "Automation",
+        "AI Bot",
+        "API Integration",
+        "Python"
+      ],
+      "apply_url": "https://www.upwork.com/nx/search/jobs/?q=python+automation",
+      "match_score": 85
+    },
+    {
+      "id": 6,
+      "title": "Python Dev — Trading Signal Bot (Scraper + Telegram Alerts)",
+      "platform": "Upwork",
+      "budget": "Est. $500-2000",
+      "budget_usd": 1000,
+      "posted": "2026-06-03",
+      "description": "Automated trading signal system with web scraper + Telegram alert bot.",
+      "requirements": [
+        "Python",
+        "Web scraping",
+        "Telegram Bot API",
+        "Trading data"
+      ],
+      "apply_url": "https://www.upwork.com/nx/search/jobs/?q=python+automation&sort=recency",
+      "match_score": 95
+    },
+    {
+      "id": 7,
+      "title": "Python Automation Bot for Foreclosure Data",
+      "platform": "Upwork",
+      "budget": "Est. $300-800",
+      "budget_usd": 500,
+      "posted": "2026-02-17",
+      "description": "Build automation for foreclosure data collection and processing.",
+      "requirements": [
+        "Python",
+        "Data automation",
+        "Web scraping"
+      ],
+      "apply_url": "https://www.upwork.com/freelance-jobs/apply/Python-Automation-Bot-for-Foreclosure-Data_~022024142002670776909/",
+      "match_score": 75
+    },
+    {
+      "id": 8,
+      "title": "Web Scraping with Python and Selenium",
+      "platform": "Upwork",
+      "budget": "Est. $200-500",
+      "budget_usd": 300,
+      "posted": "2026-04-18",
+      "description": "Develop web scraping script using Python and Selenium for data extraction.",
+      "requirements": [
+        "Python",
+        "Selenium",
+        "Web scraping"
+      ],
+      "apply_url": "https://www.upwork.com/freelance-jobs/apply/Web-Scraping-with-Python-and-Selenium_~022045505052993937609/",
+      "match_score": 80
+    },
+    {
+      "id": 9,
+      "title": "Finish & Deploy Python Web-Scraping Automation (Code Mostly Written)",
+      "platform": "Upwork",
+      "budget": "Est. $200-400",
+      "budget_usd": 300,
+      "posted": "2026-05-15",
+      "description": "Finish and deploy existing Python web-scraping code to production.",
+      "requirements": [
+        "Python",
+        "Web scraping",
+        "Deployment"
+      ],
+      "apply_url": "https://www.upwork.com/freelance-jobs/apply/Finish-deploy-Python-web-scraping-automation-code-mostly-written_~022055305776265364715/",
+      "match_score": 78
+    },
+    {
+      "id": 10,
+      "title": "Python Messaging Bot for Rent Listings",
+      "platform": "Upwork",
+      "budget": "Est. $300-600",
+      "budget_usd": 400,
+      "posted": "2026-05-11",
+      "description": "Python messaging bot to parse rent listings and collect leads automatically.",
+      "requirements": [
+        "Python",
+        "Messaging bot",
+        "Data parsing",
+        "Lead collection"
+      ],
+      "apply_url": "https://www.upwork.com/freelance-jobs/apply/Python-Messaging-Bot-for-Rent-Listings_~022053827163669532391",
+      "match_score": 82
+    },
+    {
+      "id": 11,
+      "title": "Python Web Scraping & Automation Bot",
+      "platform": "Freelancer",
+      "budget": "₹12,500-37,500 (~$150-450)",
+      "budget_usd": 300,
+      "posted": "2026-06-04",
+      "description": "Develop a Python-based bot for web scraping and automation tasks.",
+      "requirements": [
+        "Python",
+        "Web scraping",
+        "Automation"
+      ],
+      "apply_url": "https://www.freelancer.com/projects/python/python-web-scraping-automation-bot",
+      "match_score": 76
+    },
+    {
+      "id": 12,
+      "title": "Python Scraping Bot Repair",
+      "platform": "Freelancer",
+      "budget": "Est. $100-300",
+      "budget_usd": 200,
+      "posted": "2026-06-04",
+      "description": "Fix existing Python scraping bot that is broken. Debug and restore functionality.",
+      "requirements": [
+        "Python",
+        "Web scraping",
+        "Debugging"
+      ],
+      "apply_url": "https://www.freelancer.com/projects/python/python-scraping-bot-repair",
+      "match_score": 70
+    }
+  ]
+}
