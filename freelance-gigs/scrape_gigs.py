@@ -1,97 +1,234 @@
 #!/usr/bin/env python3
-# © 2026 Ranuk IT Solutions — ranuk.dev
-"""Scrapes freelance platforms for automation gigs via Camofox stealth browser."""
-import json, os, re, sys, time, urllib.request, subprocess
-from datetime import datetime
+# (c) 2026 Ranuk IT Solutions
+"""Freelance Gig Scraper via Camofox stealth browser."""
+import json, os, re, sys, time, urllib.request
+from bs4 import BeautifulSoup
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
 
-CAMO = "http://127.0.0.1:9377"
-DIR = os.path.dirname(os.path.abspath(__file__))
+CAMOFOX = "http://127.0.0.1:9377"
+OUT = Path(__file__).resolve().parent
+MIN_BUDGET = 200
 QUERIES = ["automation bot", "scraping tool", "data pipeline", "API integration", "Python automation"]
-PLATFORMS = {
-    "upwork": {"name":"Upwork","urls":["https://www.upwork.com/nx/search/jobs/?q={q}&sort=recency"]},
-    "freelancer": {"name":"Freelancer","urls":["https://www.freelancer.com/search/projects?q={q}&status=open"]},
-    "fiverr": {"name":"Fiverr","urls":["https://www.fiverr.com/search/gigs?query={q}&source=category_tree&search_in=buying"]},
-    "contra": {"name":"Contra","urls":["https://contra.com/opportunities?q={q}"]},
-}
 
-def camo_req(method, path, body=None, timeout=30):
-    data = json.dumps(body).encode() if body else None
-    r = urllib.request.Request(CAMO+path, data=data, method=method, headers={"Content-Type":"application/json"})
-    with urllib.request.urlopen(r, timeout=timeout) as resp:
-        return json.loads(resp.read())
-
-def ensure_camofox():
+def camo_ok():
     try:
-        urllib.request.urlopen(CAMO+"/health", timeout=3); return True
-    except: pass
-    d = os.path.expanduser("~/Desktop/Oficina_Ranuk/_eval/camofox")
-    subprocess.Popen(["/opt/homebrew/bin/npm","start"],cwd=d,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
-    for _ in range(20):
-        time.sleep(1.5)
-        try: urllib.request.urlopen(CAMO+"/health",timeout=3); return True
-        except: pass
-    return False
+        urllib.request.urlopen(f"{CAMOFOX}/health", timeout=5)
+        return True
+    except Exception:
+        return False
 
-def browse(url):
-    s = {"userId":"ranukita","sessionKey":"ranukita"}
-    tab = camo_req("POST","/tabs",s)
-    tid = tab.get("tabId") or tab.get("id") or tab.get("tab",{}).get("id")
-    camo_req("POST",f"/tabs/{tid}/navigate",{**s,"url":url})
-    time.sleep(4)
-    try: snap = camo_req("GET",f"/tabs/{tid}/snapshot?userId=ranukita&format=text")
-    except: snap = {"snapshot":""}
-    try: camo_req("DELETE",f"/tabs/{tid}?userId=ranukita")
-    except: pass
-    return snap.get("snapshot","")[:15000]
-
-def parse_budget(t):
-    m = re.search(r"\$[\d,]+(?:\.\d{2})?(?:\s*[-–]\s*\$[\d,]+)?", t)
-    if m:
-        nums = re.findall(r"[\d,]+\.?\d*", m.group(0))
-        if nums: return max(float(n.replace(",","")) for n in nums)
-    m = re.search(r"(?:budget|price)[:\s]*\$?([\d,]+)", t, re.I)
-    if m: return float(m.group(1).replace(",",""))
+def browse(url, retries=2):
+    body = json.dumps({"url": url, "userId": "ranukita", "sessionKey": "ranukita"}).encode()
+    for i in range(retries + 1):
+        try:
+            req = urllib.request.Request(f"{CAMOFOX}/browse", data=body, method="POST",
+                                         headers={"Content-Type": "application/json"})
+            with urllib.request.urlopen(req, timeout=60) as r:
+                d = json.loads(r.read())
+                return d.get("content", d.get("html", ""))
+        except Exception as e:
+            if i < retries:
+                time.sleep(3)
+            else:
+                print(f"  X Camofox error: {e}")
     return None
 
-def extract_gigs(snap, platform, query):
-    gigs, lines = [], snap.split("\n") if snap else []
-    for i,ln in enumerate(lines):
-        ln = ln.strip()
-        if not ln or len(ln)<10 or len(ln)>200 or ln.startswith("http") or ln.startswith("$"): continue
-        kws = ["auto","bot","scrap","pipeline","api","python","data","integrat","script","tool","develop","build","web","app","system","software","engineer","project","hire","expert"]
-        if any(k in ln.lower() for k in kws):
-            ctx = "\n".join(lines[max(0,i-2):i+5])
-            gigs.append({"title":ln[:150],"platform":platform,"query":query,
-                         "budget":parse_budget(ctx),"deadline":None,"description":ctx[:500]})
+def parse_budget(txt):
+    txt = txt.replace(",", "").replace("$", "")
+    m = re.search(r"(\d+)\s*-\s*(\d+)", txt)
+    if m: return float(m.group(1)), float(m.group(2))
+    m = re.search(r"(\d+)", txt)
+    if m: v = float(m.group(1)); return v, v
+    return 0.0, 0.0
+
+
+def scrape_upwork(q):
+    gigs = []
+    enc = q.replace(" ", "+")
+    url = f"https://www.upwork.com/search/jobs/?q={enc}&sort=recency&budget=200-&posted=1"
+    print(f"  -> Upwork: {q}")
+    html = browse(url)
+    if not html: return gigs
+    soup = BeautifulSoup(html, "html.parser")
+    cards = soup.select("section.air3-card, [data-test='job-tile-list'] > div")
+    if not cards: cards = soup.select("article, .job-tile")
+    for c in cards[:20]:
+        a = c.select_one("a[data-test='job-tile-title-link'], h2 a")
+        title = a.get_text(strip=True) if a else ""
+        href = a.get("href", "") if a else ""
+        if href and not href.startswith("http"): href = "https://www.upwork.com" + href
+        if not title: continue
+        b = c.select_one("[data-test='budget'], .budget")
+        bt = b.get_text(strip=True) if b else ""
+        mn, mx = parse_budget(bt)
+        if 0 < mx < MIN_BUDGET: continue
+        d = c.select_one("[data-test='job-description-text']")
+        dtxt = d.get_text(strip=True)[:500] if d else ""
+        gigs.append(dict(title=title, platform="upwork", budget=bt or "Not specified",
+                         budget_min=mn, budget_max=mx, description=dtxt, requirements="",
+                         deadline="", posted_date="", url=href, query=q))
     return gigs
 
-def scrape_all(min_budget=200):
-    if not ensure_camofox():
-        print("⚠ Camofox no disponible"); return []
-    all_gigs, seen = [], set()
-    for pk,pc in PLATFORMS.items():
+def scrape_freelancer(q):
+    gigs = []
+    enc = q.replace(" ", "%20")
+    url = f"https://www.freelancer.com/jobs/?keyword={enc}&budget_min=200&time_submitted=1"
+    print(f"  -> Freelancer: {q}")
+    html = browse(url)
+    if not html: return gigs
+    soup = BeautifulSoup(html, "html.parser")
+    cards = soup.select("div.JobSearchCard-item, .project-list-item")
+    for c in cards[:20]:
+        a = c.select_one("a.JobSearchCard-primary-heading-link, h3 a")
+        title = a.get_text(strip=True) if a else ""
+        href = a.get("href", "") if a else ""
+        if href and not href.startswith("http"): href = "https://www.freelancer.com" + href
+        if not title: continue
+        b = c.select_one(".JobSearchCard-secondary-price")
+        bt = b.get_text(strip=True) if b else ""
+        mn, mx = parse_budget(bt)
+        if 0 < mx < MIN_BUDGET: continue
+        gigs.append(dict(title=title, platform="freelancer", budget=bt or "Not specified",
+                         budget_min=mn, budget_max=mx, description="", requirements="",
+                         deadline="", posted_date="", url=href, query=q))
+    return gigs
+
+def scrape_fiverr(q):
+    gigs = []
+    enc = q.replace(" ", "+")
+    url = f"https://www.fiverr.com/search/gigs?query={enc}&source=top-bar"
+    print(f"  -> Fiverr: {q}")
+    html = browse(url)
+    if not html: return gigs
+    soup = BeautifulSoup(html, "html.parser")
+    cards = soup.select("[data-testid='gig-card-layout'], .gig-card, [class*='search-result']")
+    for c in cards[:20]:
+        a = c.select_one("a[href*='gig']")
+        title = a.get_text(strip=True) if a else ""
+        href = a.get("href", "") if a else ""
+        if href and not href.startswith("http"): href = "https://www.fiverr.com" + href
+        if not title:
+            h = c.select_one("h3, [class*='title']")
+            title = h.get_text(strip=True) if h else ""
+        if not title: continue
+        b = c.select_one("[class*='price']")
+        bt = b.get_text(strip=True) if b else ""
+        mn, mx = parse_budget(bt)
+        if 0 < mx < MIN_BUDGET: continue
+        gigs.append(dict(title=title, platform="fiverr", budget=bt or "Not specified",
+                         budget_min=mn, budget_max=mx, description="", requirements="",
+                         deadline="", posted_date="", url=href, query=q))
+    return gigs
+
+def scrape_contra(q):
+    gigs = []
+    enc = q.replace(" ", "+")
+    url = f"https://www.contra.com/opportunities?q={enc}"
+    print(f"  -> Contra: {q}")
+    html = browse(url)
+    if not html: return gigs
+    soup = BeautifulSoup(html, "html.parser")
+    cards = soup.select("[class*='opportunity'], [class*='listing'], article")
+    for c in cards[:20]:
+        a = c.select_one("a[href*='/opportunities/']")
+        title = a.get_text(strip=True) if a else ""
+        href = a.get("href", "") if a else ""
+        if href and not href.startswith("http"): href = "https://www.contra.com" + href
+        if not title:
+            h = c.select_one("h2, h3")
+            title = h.get_text(strip=True) if h else ""
+        if not title: continue
+        b = c.select_one("[class*='budget'], [class*='price']")
+        bt = b.get_text(strip=True) if b else ""
+        mn, mx = parse_budget(bt)
+        if 0 < mx < MIN_BUDGET: continue
+        gigs.append(dict(title=title, platform="contra", budget=bt or "Not specified",
+                         budget_min=mn, budget_max=mx, description="", requirements="",
+                         deadline="", posted_date="", url=href, query=q))
+    return gigs
+
+PLATFORMS = {"upwork": scrape_upwork, "freelancer": scrape_freelancer,
+             "fiverr": scrape_fiverr, "contra": scrape_contra}
+
+def main():
+    import argparse
+    ap = argparse.ArgumentParser(description="Freelance gig scraper")
+    ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--platform", choices=list(PLATFORMS.keys()))
+    args = ap.parse_args()
+
+    today = datetime.now().strftime("%Y-%m-%d")
+    if not camo_ok():
+        print("ERROR: Camofox not running. Start with:")
+        print("  cd ~/Desktop/Oficina_Ranuk/_eval/camofox && npm start")
+        sys.exit(1)
+    print(f"Camofox OK. Scraping gigs for {today}...")
+
+    platforms = [args.platform] if args.platform else list(PLATFORMS.keys())
+    all_gigs = []
+    stats = {}
+
+    for pname in platforms:
+        scraper = PLATFORMS[pname]
+        count = 0
         for q in QUERIES:
-            for ut in pc["urls"]:
-                url = ut.format(q=q.replace(" ","+"))
-                print(f"  🔍 {pc['name']}: {q}")
-                try:
-                    for g in extract_gigs(browse(url), pc["name"], q):
-                        t = g["title"].lower().strip()
-                        if t not in seen: seen.add(t); all_gigs.append(g)
-                except Exception as e: print(f"    ⚠ {e}")
-                time.sleep(2)
-    filtered = [g for g in all_gigs if g["budget"] is None or g["budget"] >= min_budget]
-    print(f"\n📊 {len(all_gigs)} total, {len(filtered)} budget >= ${min_budget}")
-    return filtered
+            try:
+                found = scraper(q)
+                all_gigs.extend(found)
+                count += len(found)
+            except Exception as e:
+                print(f"  X {pname}/{q}: {e}")
+        stats[pname] = count
+        print(f"  {pname}: {count} gigs found")
+
+    # Deduplicate by URL
+    seen = set()
+    unique = []
+    for g in all_gigs:
+        key = g.get("url", "") or g.get("title", "")
+        if key and key not in seen:
+            seen.add(key)
+            unique.append(g)
+    all_gigs = unique
+
+    # Sort by budget descending
+    all_gigs.sort(key=lambda x: x.get("budget_max", 0), reverse=True)
+
+    result = {
+        "scraped_at": datetime.now(timezone.utc).isoformat(),
+        "date": today,
+        "total_gigs": len(all_gigs),
+        "stats": stats,
+        "min_budget_filter": MIN_BUDGET,
+        "queries": QUERIES,
+        "gigs": all_gigs,
+    }
+
+    if not args.dry_run:
+        dated = OUT / f"gigs-{today}.json"
+        combined = OUT / "all-gigs.json"
+        with open(dated, "w") as f:
+            json.dump(result, f, indent=2, ensure_ascii=False)
+        with open(combined, "w") as f:
+            json.dump(result, f, indent=2, ensure_ascii=False)
+        print(f"
+Saved {len(all_gigs)} gigs to:")
+        print(f"  {dated}")
+        print(f"  {combined}")
+    else:
+        print(f"
+[DRY RUN] Would save {len(all_gigs)} gigs")
+
+    # Print top 5
+    if all_gigs:
+        print("
+=== TOP 5 GIGS ===")
+        for i, g in enumerate(all_gigs[:5], 1):
+            print(f"  {i}. [{g['platform']}] {g['title']}")
+            print(f"     Budget: {g['budget']}  URL: {g['url'][:80]}")
+
+    return result
 
 if __name__ == "__main__":
-    date = datetime.now().strftime("%Y-%m-%d")
-    mb = 200
-    print(f"🚀 Ranukita Gigs Scraper — {date}\n")
-    gigs = scrape_all(min_budget=mb)
-    gigs.sort(key=lambda g: g["budget"] or 0, reverse=True)
-    out = os.path.join(DIR, f"gigs-{date}.json")
-    with open(out,"w") as f: json.dump({"date":date,"min_budget":mb,"total":len(gigs),"gigs":gigs}, f, indent=2, ensure_ascii=False)
-    print(f"\n✅ Guardado: {out} ({len(gigs)} gigs)")
-    for g in gigs[:5]:
-        print(f"  💼 {g['platform']}: {g['title'][:60]} | ${g['budget'] or '?'}")
+    main()
