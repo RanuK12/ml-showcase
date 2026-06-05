@@ -19,7 +19,9 @@
         "Multi-account"
       ],
       "apply_url": "https://www.upwork.com/freelance-jobs/apply/High-Frequency-Python-Engineer-Multi-Account-Bot-Rithmic-API_~022048113982162663175/",
-      "match_score": 85
+      "match_score": 85,
+      "budget_confirmed": true,
+      "note": " WARNING: posted >2 weeks ago, may be closed."
     },
     {
       "id": 2,
@@ -36,7 +38,9 @@
         "Automation"
       ],
       "apply_url": "https://www.upwork.com/nx/search/jobs/?q=scraping&page=3",
-      "match_score": 90
+      "match_score": 90,
+      "budget_confirmed": true,
+      "note": " NOTE: URL is search page, not specific gig listing."
     },
     {
       "id": 3,
@@ -53,7 +57,8 @@
         "Production deploy"
       ],
       "apply_url": "https://www.upwork.com/freelance-jobs/python-script/",
-      "match_score": 88
+      "match_score": 88,
+      "budget_confirmed": false
     },
     {
       "id": 4,
@@ -70,7 +75,8 @@
         "Document automation"
       ],
       "apply_url": "https://www.upwork.com/freelance-jobs/apply/Senior-Python-Backend-Developer-for-TELEG-Bot-High-Scale-Data-Automation_~022014745712360590480/",
-      "match_score": 92
+      "match_score": 92,
+      "budget_confirmed": false
     },
     {
       "id": 5,
@@ -87,7 +93,9 @@
         "Python"
       ],
       "apply_url": "https://www.upwork.com/nx/search/jobs/?q=python+automation",
-      "match_score": 85
+      "match_score": 85,
+      "budget_confirmed": true,
+      "note": " NOTE: URL is search page, not specific gig listing."
     },
     {
       "id": 6,
@@ -104,7 +112,9 @@
         "Trading data"
       ],
       "apply_url": "https://www.upwork.com/nx/search/jobs/?q=python+automation&sort=recency",
-      "match_score": 95
+      "match_score": 95,
+      "budget_confirmed": false,
+      "note": " NOTE: URL is search page, not specific gig listing."
     },
     {
       "id": 7,
@@ -120,7 +130,9 @@
         "Web scraping"
       ],
       "apply_url": "https://www.upwork.com/freelance-jobs/apply/Python-Automation-Bot-for-Foreclosure-Data_~022024142002670776909/",
-      "match_score": 75
+      "match_score": 75,
+      "budget_confirmed": false,
+      "note": " WARNING: posted >2 weeks ago, may be closed."
     },
     {
       "id": 8,
@@ -136,7 +148,9 @@
         "Web scraping"
       ],
       "apply_url": "https://www.upwork.com/freelance-jobs/apply/Web-Scraping-with-Python-and-Selenium_~022045505052993937609/",
-      "match_score": 80
+      "match_score": 80,
+      "budget_confirmed": false,
+      "note": " WARNING: posted >2 weeks ago, may be closed."
     },
     {
       "id": 9,
@@ -152,7 +166,9 @@
         "Deployment"
       ],
       "apply_url": "https://www.upwork.com/freelance-jobs/apply/Finish-deploy-Python-web-scraping-automation-code-mostly-written_~022055305776265364715/",
-      "match_score": 78
+      "match_score": 78,
+      "budget_confirmed": false,
+      "note": " WARNING: posted >2 weeks ago, may be closed."
     },
     {
       "id": 10,
@@ -169,7 +185,9 @@
         "Lead collection"
       ],
       "apply_url": "https://www.upwork.com/freelance-jobs/apply/Python-Messaging-Bot-for-Rent-Listings_~022053827163669532391",
-      "match_score": 82
+      "match_score": 82,
+      "budget_confirmed": false,
+      "note": " WARNING: posted >2 weeks ago, may be closed."
     },
     {
       "id": 11,
@@ -185,7 +203,8 @@
         "Automation"
       ],
       "apply_url": "https://www.freelancer.com/projects/python/python-web-scraping-automation-bot",
-      "match_score": 76
+      "match_score": 76,
+      "budget_confirmed": false
     },
     {
       "id": 12,
@@ -201,7 +220,9 @@
         "Debugging"
       ],
       "apply_url": "https://www.freelancer.com/projects/python/python-scraping-bot-repair",
-      "match_score": 70
+      "match_score": 70,
+      "budget_confirmed": false
     }
-  ]
+  ],
+  "notes": "Budgets marked null where not confirmed. Only Upwork/Freelancer returned results; Fiverr/Contra blocked by anti-bot."
 }
