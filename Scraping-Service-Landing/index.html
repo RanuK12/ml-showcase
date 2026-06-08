@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ranukita Scraping - Custom Web Data Extraction</title>
+<link rel="icon" type="image/png" href="ranukita-logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#1a1a2e;--bg2:#0f0f1a;--card:#16213e;--cyan:#00d4ff;--gold:#ffd700;--white:#fff;--sec:#a8b2c1;--bdr:rgba(255,255,255,.08)}
+html{scroll-behavior:smooth}body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--white);line-height:1.6;overflow-x:hidden}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--gold)}
+.ctn{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(26,26,46,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--bdr);padding:14px 0}
+nav .ctn{display:flex;justify-content:space-between;align-items:center}
+.nlogo{display:flex;align-items:center;gap:12px;font-size:1.3rem;font-weight:700;color:var(--white)}.nlogo img{height:38px;border-radius:8px}.nlogo b{color:var(--cyan)}
+.nlinks{display:flex;gap:28px;list-style:none;align-items:center}.nlinks a{color:var(--sec);font-weight:500;font-size:.9rem}.nlinks a:hover{color:var(--cyan)}
+.ncta{background:linear-gradient(135deg,#00d4ff,#0099cc)!important;color:var(--bg)!important;padding:10px 22px;border-radius:8px;font-weight:700;font-size:.85rem}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px}.ham span{width:26px;height:3px;background:var(--white);border-radius:2px;display:block}
+.hero{background:linear-gradient(135deg,#1a1a2e,#16213e 50%,#0f3460);padding:160px 0 100px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(0,212,255,.3),transparent 70%);border-radius:50%;animation:pulse 6s ease-in-out infinite}
+.hero::after{content:'';position:absolute;bottom:-30%;left:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(255,215,0,.15),transparent 70%);border-radius:50%;animation:pulse 8s ease-in-out infinite reverse}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.2);opacity:.8}}
+.hero .ctn{position:relative;z-index:1;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.3);padding:8px 20px;border-radius:50px;font-size:.85rem;color:var(--cyan);font-weight:600;margin-bottom:24px}
+.hero h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:800;line-height:1.15;margin-bottom:24px;letter-spacing:-.02em}
+.hc{color:var(--cyan)}.hg{color:var(--gold)}
+.hero .sub{font-size:clamp(1.05rem,2vw,1.25rem);color:var(--sec);max-width:680px;margin:0 auto 40px;line-height:1.7}
+.hbtns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:64px}
+.btn1{background:linear-gradient(135deg,#00d4ff,#0099cc);color:var(--bg);padding:16px 36px;border-radius:12px;font-weight:700;font-size:1.05rem;border:none;cursor:pointer;transition:all .3s;display:inline-flex;align-items:center;gap:8px}
+.btn1:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,212,255,.3);color:var(--bg)}
+.btn2{background:transparent;color:var(--white);padding:16px 36px;border-radius:12px;font-weight:600;font-size:1.05rem;border:2px solid var(--bdr);cursor:pointer;transition:all .3s}
+.btn2:hover{border-color:var(--cyan);color:var(--cyan)}
+.stats{display:flex;justify-content:center;gap:60px;flex-wrap:wrap}.stat{text-align:center}.stat .n{font-size:2.2rem;font-weight:800;color:var(--cyan)}.stat .l{font-size:.85rem;color:var(--sec);margin-top:4px}
+section{padding:100px 0}.stit{text-align:center;margin-bottom:64px}.stit h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin-bottom:16px}.stit p{color:var(--sec);font-size:1.1rem;max-width:600px;margin:0 auto}
+.tag{display:inline-block;background:rgba(0,212,255,.1);color:var(--cyan);padding:6px 16px;border-radius:20px;font-size:.8rem;font-weight:600;margin-bottom:16px}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+.fcard{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:36px;transition:all .3s}
+.fcard:hover{transform:translateY(-4px);border-color:rgba(0,212,255,.3);box-shadow:0 8px 40px rgba(0,0,0,.3)}
+.fi{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:20px;background:rgba(0,212,255,.1)}
+.fcard h3{font-size:1.2rem;font-weight:700;margin-bottom:12px}.fcard p{color:var(--sec);font-size:.95rem;line-height:1.7}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:32px;counter-reset:step}.step{text-align:center}
+.step .num{display:block;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#00d4ff,#0099cc);color:var(--bg);font-size:1.4rem;font-weight:800;line-height:56px;margin:0 auto 20px}
+.step h3{font-size:1.1rem;margin-bottom:8px}.step p{color:var(--sec);font-size:.95rem}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;align-items:start}
+.pcard{background:var(--card);border:1px solid var(--bdr);border-radius:20px;padding:40px 32px;text-align:center;transition:all .3s;position:relative}
+.pcard.pop{border-color:var(--cyan);box-shadow:0 0 40px rgba(0,212,255,.15);transform:scale(1.02)}
+.pop-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#00d4ff,#0099cc);color:var(--bg);padding:6px 20px;border-radius:20px;font-size:.8rem;font-weight:700}
+.pcard h3{font-size:1.3rem;font-weight:700;margin-bottom:8px}.pcard .price{font-size:3rem;font-weight:800;margin:16px 0}.pcard .price span{font-size:1rem;font-weight:400;color:var(--sec)}
+.pcard .desc{color:var(--sec);font-size:.9rem;margin-bottom:24px}
+.pcard ul{list-style:none;text-align:left;margin-bottom:32px}.pcard li{padding:10px 0;border-bottom:1px solid var(--bdr);font-size:.9rem;color:var(--sec);display:flex;align-items:center;gap:10px}
+.pcard li::before{content:'✓';color:var(--cyan);font-weight:700}
+.btn-full{width:100%;padding:14px;border-radius:12px;font-weight:700;font-size:1rem;border:none;cursor:pointer;transition:all .3s}
+.btn-cyan{background:linear-gradient(135deg,#00d4ff,#0099cc);color:var(--bg)}.btn-cyan:hover{box-shadow:0 8px 30px rgba(0,212,255,.3)}
+.btn-outline{background:transparent;color:var(--white);border:2px solid var(--bdr)}.btn-outline:hover{border-color:var(--cyan);color:var(--cyan)}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+.tcard{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:32px}
+.tcard .stars{color:var(--gold);font-size:1.1rem;margin-bottom:16px}
+.tcard blockquote{font-style:italic;color:var(--sec);font-size:.95rem;line-height:1.7;margin-bottom:20px}
+.tcard .author{display:flex;align-items:center;gap:12px}
+.tcard .avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#00d4ff,#0099cc);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--bg);font-size:1rem}
+.tcard .aname{font-weight:600;font-size:.9rem}.tcard .arole{font-size:.8rem;color:var(--sec)}
+.demo-sec{background:var(--bg2)}
+.code-block{background:#0d1117;border:1px solid var(--bdr);border-radius:16px;padding:32px;overflow-x:auto;max-width:800px;margin:0 auto}
+.code-block pre{margin:0;font-family:'SF Mono','Fira Code',monospace;font-size:.85rem;line-height:1.8;color:#c9d1d9}
+.code-block .kw{color:#ff7b72}.code-block .fn{color:#d2a8ff}.code-block .st{color:#a5d6ff}.code-block .cm{color:#8b949e}.code-block .num{color:#79c0ff}.code-block .op{color:#ff7b72}
+.cta-banner{background:linear-gradient(135deg,#00d4ff,#0099cc);padding:80px 0;text-align:center;color:var(--bg)}
+.cta-banner h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;margin-bottom:16px;color:var(--bg)}
+.cta-banner p{color:rgba(26,26,46,.8);font-size:1.1rem;margin-bottom:32px}
+.cta-banner .btn1{background:var(--bg);color:var(--cyan)}.cta-banner .btn1:hover{box-shadow:0 8px 30px rgba(0,0,0,.3);color:var(--cyan)}
+footer{background:var(--bg2);padding:64px 0 32px;border-top:1px solid var(--bdr)}
+.fgrid2{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.fcol h4{font-weight:700;margin-bottom:16px;color:var(--white)}
+.fcol p{color:var(--sec);font-size:.9rem;line-height:1.7}
+.fcol a{display:block;color:var(--sec);font-size:.9rem;margin-bottom:10px}.fcol a:hover{color:var(--cyan)}
+.fbot{border-top:1px solid var(--bdr);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.fbot p{color:var(--mute);font-size:.85rem}
+@media(max-width:768px){
+.nlinks{display:none}.ham{display:flex}
+.nlinks.show{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:rgba(26,26,46,.98);padding:20px 24px;gap:16px;border-bottom:1px solid var(--bdr)}
+.stats{gap:32px}.stat .n{font-size:1.6rem}
+.fgrid,.pgrid,.tgrid{grid-template-columns:1fr}
+.fgrid2{grid-template-columns:1fr}
+.pcard.pop{transform:none}
+.hero{padding:130px 0 80px}
+section{padding:60px 0}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="ctn">
+<a href="#" class="nlogo"><img src="ranukita-logo.png" alt="Ranukita"> <b>Ranukita</b> Scraping</a>
+<ul class="nlinks">
+<li><a href="#features">Features</a></li>
+<li><a href="#how">How It Works</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#demo">Demo</a></li>
+<li><a href="#contact" class="ncta">Get Started</a></li>
+</ul>
+<button class="ham" onclick="document.querySelector('.nlinks').classList.toggle('show')" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+</nav>
+
+<section class="hero">
+<div class="ctn">
+<div class="badge">⚡ Trusted by 50+ businesses worldwide</div>
+<h1>Extract Any Web Data.<br><span class="hc">Automatically.</span></h1>
+<p class="sub">Custom scraping pipelines built for your business. No coding required. Get clean, structured data from any website — e-commerce, directories, real estate, or news — delivered to your inbox or API.</p>
+<div class="hbtns">
+<a href="#pricing" class="btn1">Start Free Trial →</a>
+<a href="#demo" class="btn2">View Demo</a>
+</div>
+<div class="stats">
+<div class="stat"><div class="n">99.9%</div><div class="l">Uptime SLA</div></div>
+<div class="stat"><div class="n">500M+</div><div class="l">Pages Scraped</div></div>
+<div class="stat"><div class="n">24/7</div><div class="l">Support</div></div>
+<div class="stat"><div class="n">&lt; 2s</div><div class="l">Avg Response</div></div>
+</div>
+</div>
+</section>
+<section id="features">
+<div class="ctn">
+<div class="stit">
+<div class="tag">Features</div>
+<h2>Everything you need to scrape at scale</h2>
+<p>From anti-bot bypass to structured output — we handle the hard parts so you can focus on your data.</p>
+</div>
+<div class="fgrid">
+<div class="fcard">
+<div class="fi">⚡</div>
+<h3>Lightning Fast Scraping</h3>
+<p>Concurrent request handling with sub-2-second response times. Our distributed infrastructure processes thousands of pages simultaneously.</p>
+</div>
+<div class="fcard">
+<div class="fi">🛡️</div>
+<h3>Anti-Bot Bypass</h3>
+<p>Rotating residential proxies, CAPTCHA solving, browser fingerprint spoofing. We get through the blocks others can't.</p>
+</div>
+<div class="fcard">
+<div class="fi">📊</div>
+<h3>Structured Data Output</h3>
+<p>Clean JSON, CSV, or direct database delivery. No messy HTML parsing — just the data fields you need, perfectly structured.</p>
+</div>
+<div class="fcard">
+<div class="fi">🔄</div>
+<h3>Scheduled Scraping</h3>
+<p>Set it and forget it. Cron-based scheduling with real-time monitoring and automatic retries. Daily, hourly, or custom intervals.</p>
+</div>
+<div class="fcard">
+<div class="fi">🔧</div>
+<h3>Custom Pipelines</h3>
+<p>Every website is different. We build tailored extraction logic for your specific targets — handling pagination, infinite scroll, and dynamic content.</p>
+</div>
+<div class="fcard">
+<div class="fi">🔌</div>
+<h3>RESTful API Access</h3>
+<p>Full API with comprehensive documentation. Integrate scraping directly into your apps, dashboards, and data pipelines.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="how" style="background:var(--bg2)">
+<div class="ctn">
+<div class="stit">
+<div class="tag">How It Works</div>
+<h2>Up and running in 3 steps</h2>
+<p>No complex setup. No learning curve. Just tell us what you need.</p>
+</div>
+<div class="steps">
+<div class="step">
+<div class="num">1</div>
+<h3>Tell Us What to Scrape</h3>
+<p>Share the URLs or describe the data you need. Product listings, prices, reviews, news — anything on the web.</p>
+</div>
+<div class="step">
+<div class="num">2</div>
+<h3>We Build the Pipeline</h3>
+<p>Our engineers create a custom extraction pipeline optimized for your target sites, with anti-bot protection built in.</p>
+</div>
+<div class="step">
+<div class="num">3</div>
+<h3>Get Data on Autopilot</h3>
+<p>Receive clean, structured data on your schedule. Via API, webhook, email, or direct to your database.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="pricing">
+<div class="ctn">
+<div class="stit">
+<div class="tag">Pricing</div>
+<h2>Simple, transparent pricing</h2>
+<p>Start free for 7 days. No credit card required. Scale as you grow.</p>
+</div>
+<div class="pgrid">
+<div class="pcard">
+<h3>Starter</h3>
+<div class="price">$49<span>/mo</span></div>
+<div class="desc">Perfect for small projects and testing</div>
+<ul>
+<li>10,000 requests / month</li>
+<li>1 concurrent connection</li>
+<li>Email support</li>
+<li>1 target website</li>
+<li>Standard proxy pool</li>
+<li>JSON / CSV output</li>
+<li>7-day free trial</li>
+</ul>
+<button class="btn-full btn-outline">Start Free Trial</button>
+</div>
+<div class="pcard pop">
+<div class="pop-badge">MOST POPULAR</div>
+<h3>Professional</h3>
+<div class="price" style="color:var(--cyan)">$99<span>/mo</span></div>
+<div class="desc">For growing businesses and data teams</div>
+<ul>
+<li>50,000 requests / month</li>
+<li>5 concurrent connections</li>
+<li>Priority support</li>
+<li>10 target websites</li>
+<li>Premium proxy pool</li>
+<li>Scheduled scraping</li>
+<li>Webhook delivery</li>
+<li>Analytics dashboard</li>
+</ul>
+<button class="btn-full btn-cyan">Start Free Trial</button>
+</div>
+<div class="pcard">
+<h3>Enterprise</h3>
+<div class="price">$199<span>/mo</span></div>
+<div class="desc">For agencies and large-scale operations</div>
+<ul>
+<li>200,000 requests / month</li>
+<li>20 concurrent connections</li>
+<li>Dedicated support engineer</li>
+<li>Unlimited target websites</li>
+<li>Residential proxy network</li>
+<li>Custom extraction pipelines</li>
+<li>SLA guarantee (99.9%)</li>
+<li>Database direct delivery</li>
+<li>Custom integrations</li>
+</ul>
+<button class="btn-full btn-outline">Contact Sales</button>
+</div>
+</div>
+</div>
+</section>
+<section style="background:var(--bg2)">
+<div class="ctn">
+<div class="stit">
+<div class="tag">Testimonials</div>
+<h2>Loved by data teams worldwide</h2>
+<p>See what our customers say about working with Ranukita Scraping.</p>
+</div>
+<div class="tgrid">
+<div class="tcard">
+<div class="stars">★★★★★</div>
+<blockquote>"We switched from building our own scrapers to Ranukita and saved 40% of our engineering time. The data quality is outstanding and the anti-bot handling is flawless."</blockquote>
+<div class="author">
+<div class="avatar">MC</div>
+<div><div class="aname">Marcus Chen</div><div class="arole">Head of Data, TechFlow</div></div>
+</div>
+</div>
+<div class="tcard">
+<div class="stars">★★★★★</div>
+<blockquote>"Market research used to take our team days. Now we get competitive pricing data every morning before our standup. Ranukita completely changed our workflow."</blockquote>
+<div class="author">
+<div class="avatar">SM</div>
+<div><div class="aname">Sarah Mitchell</div><div class="arole">CEO, DataInsight Analytics</div></div>
+</div>
+</div>
+<div class="tcard">
+<div class="stars">★★★★★</div>
+<blockquote>"We needed to scrape 200+ job boards for our lead gen platform. Ranukita built custom pipelines for each one. The ROI was immediate — 3x more qualified leads."</blockquote>
+<div class="author">
+<div class="avatar">JR</div>
+<div><div class="aname">James Rodriguez</div><div class="arole">CTO, GrowthHack Labs</div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="demo" class="demo-sec">
+<div class="ctn">
+<div class="stit">
+<div class="tag">Live Demo</div>
+<h2>See it in action</h2>
+<p>Here's a Python example showing how easy it is to integrate Ranukita's API.</p>
+</div>
+<div class="code-block"><pre><span class="cm"># Ranukita Scraping API - Quick Start Example</span>
+<span class="cm"># Install: pip install requests</span>
+
+<span class="kw">import</span> requests
+<span class="kw">import</span> json
+
+<span class="cm"># Your API key from ranuk.dev/dashboard</span>
+API_KEY = <span class="st">"rk_live_your_key_here"</span>
+BASE_URL = <span class="st">"https://api.ranuk.dev/v1"</span>
+
+<span class="cm"># Scrape product listings from an e-commerce site</span>
+response = requests.<span class="fn">post</span>(
+    <span class="st">f"{BASE_URL}/scrape"</span>,
+    headers={<span class="st">"Authorization"</span>: <span class="st">f"Bearer {API_KEY}"</span>},
+    json={
+        <span class="st">"target"</span>: <span class="st">"https://example-store.com/products"</span>,
+        <span class="st">"format"</span>: <span class="st">"json"</span>,
+        <span class="st">"fields"</span>: [<span class="st">"name"</span>, <span class="st">"price"</span>, <span class="st">"rating"</span>, <span class="st">"reviews"</span>, <span class="st">"image_url"</span>],
+        <span class="st">"pagination"</span>: <span class="kw">True</span>,
+        <span class="st">"max_pages"</span>: <span class="num">5</span>
+    }
+)
+
+data = response.<span class="fn">json</span>()
+
+<span class="cm"># Process structured results</span>
+<span class="kw">for</span> product <span class="kw">in</span> data[<span class="st">"results"</span>]:
+    <span class="fn">print</span>(<span class="st">f"📦 {product['name']}"</span>)
+    <span class="fn">print</span>(<span class="st">f"   💰 ${product['price']} | ⭐ {product['rating']}"</span>)
+    <span class="fn">print</span>(<span class="st">f"   📝 {product['reviews']} reviews"</span>)
+    <span class="fn">print</span>()
+
+<span class="cm"># Output:</span>
+<span class="cm"># 📦 Wireless Noise-Canceling Headphones</span>
+<span class="cm">#    💰 $79.99 | ⭐ 4.7</span>
+<span class="cm">#    📝 2,341 reviews</span>
+<span class="cm">#</span>
+<span class="cm"># 📦 Smart Watch Pro 2026</span>
+<span class="cm">#    💰 $199.99 | ⭐ 4.5</span>
+<span class="cm">#    📝 1,892 reviews</span></pre></div>
+</div>
+</section>
+<div class="cta-banner" id="contact">
+<div class="ctn">
+<h2>Ready to Automate Your Data Collection?</h2>
+<p>Join 50+ businesses that extract web data with Ranukita. Start your free 7-day trial today.</p>
+<a href="mailto:hello@ranuk.dev" class="btn1">Get Started — It's Free →</a>
+</div>
+</div>
+
+<footer>
+<div class="ctn">
+<div class="fgrid2">
+<div class="fcol">
+<a href="#" class="nlogo" style="margin-bottom:16px"><img src="ranukita-logo.png" alt="Ranukita" style="height:32px;border-radius:6px"> <b>Ranukita</b></a>
+<p>Custom web scraping solutions built for modern businesses. Clean data, delivered automatically.</p>
+</div>
+<div class="fcol">
+<h4>Product</h4>
+<a href="#features">Features</a>
+<a href="#pricing">Pricing</a>
+<a href="#demo">API Docs</a>
+<a href="#">Status Page</a>
+</div>
+<div class="fcol">
+<h4>Company</h4>
+<a href="#">About</a>
+<a href="#">Blog</a>
+<a href="#">Careers</a>
+<a href="mailto:hello@ranuk.dev">Contact</a>
+</div>
+<div class="fcol">
+<h4>Connect</h4>
+<a href="https://github.com/RanuK12" target="_blank">GitHub</a>
+<a href="https://linkedin.com/in/emilio-ranucoli" target="_blank">LinkedIn</a>
+<a href="https://ranuk.dev" target="_blank">ranuk.dev</a>
+<a href="mailto:hello@ranuk.dev">hello@ranuk.dev</a>
+</div>
+</div>
+<div class="fbot">
+<p>&copy; 2026 Ranukita by Ranuk IT Solutions. All rights reserved.</p>
+<p>Built with ❤️ in Amsterdam</p>
+</div>
+</div>
+</footer>
+</body>
+</html>
