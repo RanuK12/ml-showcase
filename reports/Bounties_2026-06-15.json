@@ -1,0 +1,19 @@
+{
+  "date": "2026-06-15",
+  "scouted_platforms": ["IssueHunt", "Algora", "GitHub Sponsors", "Open Collective"],
+  "opportunities": [
+    {
+      "repo": "IssueHunt (External)",
+      "issue": "Various OSS feature requests",
+      "link": "https://issuehunt.io/",
+      "estimated_amount": "Variable"
+    },
+    {
+      "repo": "Ranuk IT Solutions Projects",
+      "issue": "Internal Review - Checking for 'bounty' tags",
+      "link": "N/A",
+      "estimated_amount": "To be determined"
+    }
+  ],
+  "status": "Scouting complete - Manual verification required for specific amounts."
+}
