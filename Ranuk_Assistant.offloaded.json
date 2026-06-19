@@ -1,8 +1,7 @@
 {
  "name": "Ranuk_Assistant",
- "archived": "2026-06-19T12:27:04.683155",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Ranuk_Assistant.tar.gz",
- "orig_mb": 363,
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Ranuk_Assistant",
- "note": "Proyecto archivado en OneDrive para liberar disco. Se excluyeron node_modules/.venv (re-instalá deps tras restaurar)."
+ "recover_from": "github",
+ "url": "https://github.com/RanuK12/Ranuk_Assistant.git",
+ "restore": "git clone https://github.com/RanuK12/Ranuk_Assistant.git ~/.ranukita/projects/Ranuk_Assistant",
+ "note": "Archivado y luego borrado de OneDrive (backfire de cache). Recuperá del repo GitHub."
 }

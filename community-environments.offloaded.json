@@ -1,8 +1,7 @@
 {
  "name": "community-environments",
- "archived": "2026-06-19T12:28:27.800931",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/community-environments.tar.gz",
- "orig_mb": 623,
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore community-environments",
- "note": "Proyecto archivado en OneDrive para liberar disco. Se excluyeron node_modules/.venv (re-instalá deps tras restaurar)."
+ "recover_from": "github",
+ "url": "https://github.com/PrimeIntellect-ai/community-environments.git",
+ "restore": "git clone https://github.com/PrimeIntellect-ai/community-environments.git ~/.ranukita/projects/community-environments",
+ "note": "Archivado y luego borrado de OneDrive (backfire de cache). Recuperá del repo GitHub."
 }

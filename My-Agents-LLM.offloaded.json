@@ -1,8 +1,7 @@
 {
  "name": "My-Agents-LLM",
- "archived": "2026-06-19T12:27:02.980022",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/My-Agents-LLM.tar.gz",
- "orig_mb": 791,
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore My-Agents-LLM",
- "note": "Proyecto archivado en OneDrive para liberar disco. Se excluyeron node_modules/.venv (re-instalá deps tras restaurar)."
+ "recover_from": "github",
+ "url": "https://github.com/RanuK12/My-Agents-LLM.git",
+ "restore": "git clone https://github.com/RanuK12/My-Agents-LLM.git ~/.ranukita/projects/My-Agents-LLM",
+ "note": "Archivado y luego borrado de OneDrive (backfire de cache). Recuperá del repo GitHub."
 }

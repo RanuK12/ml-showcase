@@ -1,8 +1,7 @@
 {
  "name": "ranuk-agent",
- "archived": "2026-06-19T12:28:47.838063",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/ranuk-agent.tar.gz",
- "orig_mb": 2005,
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore ranuk-agent",
- "note": "Proyecto archivado en OneDrive para liberar disco. Se excluyeron node_modules/.venv (re-instalá deps tras restaurar)."
+ "recover_from": "github",
+ "url": "git@github.com:RanuK12/Ranuk-Outreach.git",
+ "restore": "git clone git@github.com:RanuK12/Ranuk-Outreach.git ~/.ranukita/projects/ranuk-agent",
+ "note": "Archivado y luego borrado de OneDrive (backfire de cache). Recuperá del repo GitHub."
 }

@@ -1,8 +1,7 @@
 {
  "name": "agent-playground",
- "archived": "2026-06-19T12:28:15.660887",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/agent-playground.tar.gz",
- "orig_mb": 371,
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore agent-playground",
- "note": "Proyecto archivado en OneDrive para liberar disco. Se excluyeron node_modules/.venv (re-instalá deps tras restaurar)."
+ "recover_from": "github",
+ "url": "https://github.com/xevrion-v2/agent-playground.git",
+ "restore": "git clone https://github.com/xevrion-v2/agent-playground.git ~/.ranukita/projects/agent-playground",
+ "note": "Archivado y luego borrado de OneDrive (backfire de cache). Recuperá del repo GitHub."
 }

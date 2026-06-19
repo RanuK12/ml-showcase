@@ -1,8 +1,7 @@
 {
  "name": "Bahay_Web_tmp",
- "archived": "2026-06-19T12:27:01.628794",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Bahay_Web_tmp.tar.gz",
- "orig_mb": 796,
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Bahay_Web_tmp",
- "note": "Proyecto archivado en OneDrive para liberar disco. Se excluyeron node_modules/.venv (re-instalá deps tras restaurar)."
+ "recover_from": "github",
+ "url": "https://github.com/RanuK12/Bahay_Web_tmp.git",
+ "restore": "git clone https://github.com/RanuK12/Bahay_Web_tmp.git ~/.ranukita/projects/Bahay_Web_tmp",
+ "note": "Archivado y luego borrado de OneDrive (backfire de cache). Recuperá del repo GitHub."
 }

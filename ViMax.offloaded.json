@@ -1,8 +1,7 @@
 {
  "name": "ViMax",
- "archived": "2026-06-19T12:28:14.455240",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/ViMax.tar.gz",
- "orig_mb": 345,
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore ViMax",
- "note": "Proyecto archivado en OneDrive para liberar disco. Se excluyeron node_modules/.venv (re-instalá deps tras restaurar)."
+ "recover_from": "github",
+ "url": "https://github.com/RanuK12/ViMax.git",
+ "restore": "git clone https://github.com/RanuK12/ViMax.git ~/.ranukita/projects/ViMax",
+ "note": "Archivado y luego borrado de OneDrive (backfire de cache). Recuperá del repo GitHub."
 }
