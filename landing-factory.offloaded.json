@@ -1,0 +1,8 @@
+{
+ "name": "landing-factory",
+ "archived": "2026-06-19T12:28:30.636182",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/landing-factory.tar.gz",
+ "orig_mb": 643,
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore landing-factory",
+ "note": "Proyecto archivado en OneDrive para liberar disco. Se excluyeron node_modules/.venv (re-instalá deps tras restaurar)."
+}

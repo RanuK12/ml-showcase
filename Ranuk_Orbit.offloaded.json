@@ -1,0 +1,8 @@
+{
+ "name": "Ranuk_Orbit",
+ "archived": "2026-06-19T12:28:13.430606",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Ranuk_Orbit.tar.gz",
+ "orig_mb": 4840,
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Ranuk_Orbit",
+ "note": "Proyecto archivado en OneDrive para liberar disco. Se excluyeron node_modules/.venv (re-instalá deps tras restaurar)."
+}

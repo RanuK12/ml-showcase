@@ -1,0 +1,8 @@
+{
+ "name": "ViMax",
+ "archived": "2026-06-19T12:28:14.455240",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/ViMax.tar.gz",
+ "orig_mb": 345,
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore ViMax",
+ "note": "Proyecto archivado en OneDrive para liberar disco. Se excluyeron node_modules/.venv (re-instalá deps tras restaurar)."
+}
