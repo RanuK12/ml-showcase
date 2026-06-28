@@ -1,0 +1,8 @@
+{
+ "name": "BootCampJava",
+ "archived": "2026-06-24T19:30:57.632254",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/BootCampJava.tar.gz",
+ "orig_mb": 0,
+ "reason": "Curso personal, no monetizable",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore BootCampJava"
+}

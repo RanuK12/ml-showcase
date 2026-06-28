@@ -1,0 +1,8 @@
+{
+ "name": "api-health-checker",
+ "archived": "2026-06-25T19:30:50.186737",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/api-health-checker.tar.gz",
+ "orig_mb": 0,
+ "reason": "Sin monetización",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore api-health-checker"
+}

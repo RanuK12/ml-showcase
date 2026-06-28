@@ -1,0 +1,8 @@
+{
+ "name": "activepieces_bounty",
+ "archived": "2026-06-25T09:30:43.846400",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/activepieces_bounty.tar.gz",
+ "orig_mb": 651,
+ "reason": "651MB, bounty no ganado",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore activepieces_bounty"
+}

@@ -1,0 +1,8 @@
+{
+ "name": "redbean-microservice",
+ "archived": "2026-06-27T09:30:49.742865",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/redbean-microservice.tar.gz",
+ "orig_mb": 0,
+ "reason": "Microservicio aislado sin cliente",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore redbean-microservice"
+}

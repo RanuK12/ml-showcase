@@ -1,7 +1,0 @@
-{
- "name": "Ranuk_Orbit",
- "recover_from": "github",
- "url": "https://github.com/RanuK12/Ranuk_Orbit.git",
- "restore": "git clone https://github.com/RanuK12/Ranuk_Orbit.git ~/.ranukita/projects/Ranuk_Orbit",
- "note": "Archivado y luego borrado de OneDrive (backfire de cache). Recuperá del repo GitHub."
-}

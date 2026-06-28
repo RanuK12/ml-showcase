@@ -1,0 +1,8 @@
+{
+ "name": "security-audit-tool",
+ "archived": "2026-06-27T09:30:54.469624",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/security-audit-tool.tar.gz",
+ "orig_mb": 0,
+ "reason": "Solapado con ADA-AUDITS, obsoleto",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore security-audit-tool"
+}

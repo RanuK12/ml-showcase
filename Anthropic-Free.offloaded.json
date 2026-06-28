@@ -1,0 +1,8 @@
+{
+ "name": "Anthropic-Free",
+ "archived": "2026-06-24T19:30:50.288753",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Anthropic-Free.tar.gz",
+ "orig_mb": 0,
+ "reason": "Proxy obsoleto, sin uso",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Anthropic-Free"
+}

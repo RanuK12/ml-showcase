@@ -1,0 +1,8 @@
+{
+ "name": "cloud-credits-tracker",
+ "archived": "2026-06-26T09:30:50.685154",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/cloud-credits-tracker.tar.gz",
+ "orig_mb": 0,
+ "reason": "Herramienta interna menor",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore cloud-credits-tracker"
+}

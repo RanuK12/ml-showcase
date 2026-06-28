@@ -1,0 +1,1 @@
+wrote 3221 bytes to \u002fUsers\u002femilioranucoli\u002fDesktop\u002fOficina_Ranuk\u002FAI_Deals_Applications\u002FNebula_AI_Application.md

@@ -1,0 +1,8 @@
+{
+ "name": "flights-alerts",
+ "archived": "2026-06-26T19:30:32.151382",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/flights-alerts.tar.gz",
+ "orig_mb": 39,
+ "reason": "Sin monetización.",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore flights-alerts"
+}

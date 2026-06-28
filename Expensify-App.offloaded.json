@@ -1,0 +1,8 @@
+{
+ "name": "Expensify-App",
+ "archived": "2026-06-24T19:31:07.231382",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Expensify-App.tar.gz",
+ "orig_mb": 0,
+ "reason": "App personal sin mercado",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Expensify-App"
+}

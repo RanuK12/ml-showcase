@@ -1,0 +1,101 @@
+{
+  "title": "Auditoría WCAG — Clarín.com",
+  "subtitle": "Homepage principal",
+  "date": "2026-06-27",
+  "sections": [
+    {
+      "heading": "1. Resumen Ejecutivo",
+      "paragraphs": [
+        "Se realizó una auditoría de accesibilidad WCAG en la homepage de Clarín.com el día 27 de junio de 2026.",
+        "El análisis detectó fallos críticos de contraste, falta de landmarks semánticos, inputs sin etiquetas y botones sin nombres accesibles."
+      ],
+      "table": {
+        "headers": ["Categoría","Cantidad","Nivel"],
+        "rows": [
+          ["Issues Críticos", "14", "A"],
+          ["Issues Moderados", "8", "AA"],
+          ["Issues Menores", "5", "AAA"],
+          ["Puntuación Global", "37/100", "-"]
+        ]
+      }
+    },
+    {
+      "heading": "2. Hallazgos Principales",
+      "paragraphs": ["A continuación los problemas detectados agrupados por categoría:"]
+    },
+    {
+      "heading": "2.1 Contraste",
+      "paragraphs": [
+        "Fallo grave de contraste en el CTA principal: los textos blancos sobre fondos transparentes tienen una relación de contraste de 1:1, muy por debajo del mínimo WCAG AA (4.5:1)."
+      ],
+      "table": {
+        "headers": ["Elemento","Texto","Color FG","Color BG","Contraste"],
+        "rows": [
+          ["A", "Suscribite por $1.978Suscribite", "#ffffff", "transparent", "1.00:1"],
+          ["SPAN", "Suscribite por $1.978", "#ffffff", "transparent", "1.00:1"],
+          ["SPAN", "Suscribite", "#ffffff", "transparent", "1.00:1"]
+        ]
+      }
+    },
+    {
+      "heading": "2.2 HTML Semántico",
+      "paragraphs": [
+        "Falta el landmark principal <main> o role=\"main\".",
+        "Jerarquía de headings desbalanceada: 5 h1, 362 h2 y 5 h3 en la página principal, con saltos (h1→h3) que afectan la navegación por screen readers."
+      ],
+      "table": {
+        "headers": ["Heading","Cantidad","Observación"],
+        "rows": [
+          ["h1", "5", "-"],
+          ["h2", "362", "Demasiados h2 en relación a h1"],
+          ["h3", "5", "Saltos en jerarquía"],
+          ["h4..h6", "0", "-"]
+        ]
+      }
+    },
+    {
+      "heading": "2.3 Formularios y Etiquetas",
+      "paragraphs": [
+        "Se detectaron 27 inputs sin etiquetas asociadas (type=\"text\", checkbox ocultos, etc.), lo que impide que usuarios de lectores de pantalla identifiquen los campos."
+      ],
+      "table": {
+        "headers": ["Tipo","Cantidad","Ejemplo"],
+        "rows": [
+          ["input sin label", "27", "<input type=\"text\" name=\"collectionName\" placeholder=\"Escribir nombre\" ...>"]
+        ]
+      }
+    },
+    {
+      "heading": "2.4 Elementos Interactivos",
+      "paragraphs": [
+        "11 botones carecen de nombre accesible (aria-label o texto visible), incluyendo botones de notificaciones, modales y navegación de carrusel."
+      ],
+      "table": {
+        "headers": ["Tipo","Cantidad","Ejemplos"],
+        "rows": [
+          ["button sin nombre", "11", "notification-btn, modal-close-button, btnPrev, btnNext"]
+        ]
+      }
+    },
+    {
+      "heading": "3. Recomendaciones",
+      "bullets": [
+        "Añadir alt a imágenes sin texto alternativo",
+        "Mejorar contraste del CTA principal (Suscribite) a al menos 4.5:1",
+        "Añadir aria-label o títulos a botones con SVGs",
+        "Añadir <main> o role=\"main\" al contenedor principal",
+        "Reorganizar jerarquía de headings (evitar saltos h1→h3)",
+        "Asociar inputs con labels usando id/for o aria-labelledby",
+        "Navegación con teclado: asegurar que todos los elementos interactivos sean alcanzables",
+        "Validar con herramientas como axe DevTools o WAVE"
+      ]
+    },
+    {
+      "heading": "4. Próximos Pasos",
+      "paragraphs": [
+        "Recomendación para Ranuk IT: contactar al equipo de Clarín con este informe profesional adjunto y ofrecer una auditoría completa o consultoría de accesibilidad para subsanar los issues detectados."
+      ]
+    }
+  ],
+  "footer": "Ranukita Bot — Propiedad de Ranuk IT Solutions | ranuk.dev | ranukorbit.com"
+}

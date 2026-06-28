@@ -1,0 +1,8 @@
+{
+ "name": "nonio",
+ "archived": "2026-06-25T09:31:47.129787",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/nonio.tar.gz",
+ "orig_mb": 98,
+ "reason": "98MB, sin commits en 66 días",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore nonio"
+}

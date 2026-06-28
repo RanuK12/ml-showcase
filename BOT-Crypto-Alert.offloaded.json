@@ -1,0 +1,8 @@
+{
+ "name": "BOT-Crypto-Alert",
+ "archived": "2026-06-24T19:30:55.182587",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/BOT-Crypto-Alert.tar.gz",
+ "orig_mb": 31,
+ "reason": "Sin mantenimiento ni ingresos",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore BOT-Crypto-Alert"
+}

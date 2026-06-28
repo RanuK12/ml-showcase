@@ -1,0 +1,8 @@
+{
+ "name": "owockibot.xyz",
+ "archived": "2026-06-26T19:30:52.031327",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/owockibot.xyz.tar.gz",
+ "orig_mb": 28,
+ "reason": "Sin tráfico ni ingresos.",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore owockibot.xyz"
+}

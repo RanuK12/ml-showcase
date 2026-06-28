@@ -1,0 +1,8 @@
+{
+ "name": "pdf-automation",
+ "archived": "2026-06-27T09:30:44.929456",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/pdf-automation.tar.gz",
+ "orig_mb": 0,
+ "reason": "Script mínimo sin avance",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore pdf-automation"
+}

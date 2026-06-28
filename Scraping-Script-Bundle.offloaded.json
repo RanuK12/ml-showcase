@@ -1,0 +1,8 @@
+{
+ "name": "Scraping-Script-Bundle",
+ "archived": "2026-06-25T19:30:42.446576",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Scraping-Script-Bundle.tar.gz",
+ "orig_mb": 0,
+ "reason": "Sin ingresos, archivar bundle",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Scraping-Script-Bundle"
+}

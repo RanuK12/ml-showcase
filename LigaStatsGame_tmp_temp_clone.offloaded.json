@@ -1,0 +1,8 @@
+{
+ "name": "LigaStatsGame_tmp_temp_clone",
+ "archived": "2026-06-24T14:17:16.916542",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/LigaStatsGame_tmp_temp_clone.tar.gz",
+ "orig_mb": 11,
+ "reason": "Multi-clone innecesario",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore LigaStatsGame_tmp_temp_clone"
+}

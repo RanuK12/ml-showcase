@@ -1,0 +1,8 @@
+{
+ "name": "GARYCIO_Project",
+ "archived": "2026-06-24T19:31:10.185522",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/GARYCIO_Project.tar.gz",
+ "orig_mb": 294,
+ "reason": "Proyecto grande sin foco",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore GARYCIO_Project"
+}

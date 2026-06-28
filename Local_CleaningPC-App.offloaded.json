@@ -1,0 +1,8 @@
+{
+ "name": "Local_CleaningPC-App",
+ "archived": "2026-06-26T09:30:41.286471",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Local_CleaningPC-App.tar.gz",
+ "orig_mb": 1,
+ "reason": "Sin relevancia para goals",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Local_CleaningPC-App"
+}

@@ -1,0 +1,8 @@
+{
+ "name": "redbean-landing",
+ "archived": "2026-06-27T09:30:48.202491",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/redbean-landing.tar.gz",
+ "orig_mb": 0,
+ "reason": "Landing en pausa, sin tráfico",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore redbean-landing"
+}

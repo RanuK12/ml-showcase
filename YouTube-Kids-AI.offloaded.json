@@ -1,0 +1,8 @@
+{
+ "name": "YouTube-Kids-AI",
+ "archived": "2026-06-25T09:30:32.056188",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/YouTube-Kids-AI.tar.gz",
+ "orig_mb": 128,
+ "reason": "128MB, sin tracción ni monetización",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore YouTube-Kids-AI"
+}

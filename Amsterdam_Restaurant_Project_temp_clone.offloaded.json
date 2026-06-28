@@ -1,0 +1,8 @@
+{
+ "name": "Amsterdam_Restaurant_Project_temp_clone",
+ "archived": "2026-06-24T14:16:59.884010",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Amsterdam_Restaurant_Project_temp_clone.tar.gz",
+ "orig_mb": 0,
+ "reason": "Clone sin valor",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Amsterdam_Restaurant_Project_temp_clone"
+}

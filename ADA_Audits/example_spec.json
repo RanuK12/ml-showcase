@@ -1,0 +1,43 @@
+{
+  "cliente": "TechCorp S.A.",
+  "fecha": "2026-06-20",
+  "resumen": {
+    "texto": "Se realizó una auditoría completa de la infraestructura de datos de TechCorp S.A. Se identificaron 12 hallazgos críticos, 8 de alto impacto y 15 de baja prioridad. El puntaje general de salud de datos es 68/100.",
+    "puntos": [
+      "Riesgos de seguridad OWASP Top 10: 3 vulnerabilidades críticas detectadas",
+      "Core Web Vitals: LCP en 4.2s (objetivo <2.5s)",
+      "Calidad de datos: 78% de registros completos",
+      "Cumplimiento GDPR: 2 hallazgos de no conformidad"
+    ]
+  },
+  "hallazgos": [
+    {"id": "SEC-001", "severidad": "Crítica", "descripcion": "API de datos expuesta sin autenticación", "estado": "Pendiente"},
+    {"id": "SEC-002", "severidad": "Crítica", "descripcion": "Inyección SQL en endpoint de consultas", "estado": "Pendiente"},
+    {"id": "PERF-001", "severidad": "Alta", "descripcion": "LCP excede 4s en dashboard principal", "estado": "En progreso"},
+    {"id": "PERF-002", "severidad": "Media", "descripcion": "Caché de consultas no implementado", "estado": "Planificado"},
+    {"id": "QUAL-001", "severidad": "Alta", "descripcion": "22% de registros con campos nulos críticos", "estado": "Pendiente"},
+    {"id": "QUAL-002", "severidad": "Baja", "descripcion": "Duplicados en tabla de usuarios (0.3%)", "estado": "Planificado"},
+    {"id": "GDPR-001", "severidad": "Alta", "descripcion": "Datos personales almacenados sin cifrado", "estado": "Pendiente"},
+    {"id": "GDPR-002", "severidad": "Media", "descripcion": "Ausencia de consentimiento tracking", "estado": "En progreso"}
+  ],
+  "recomendaciones": [
+    "Implementar OWASP Top 10 como checklist de seguridad en CI/CD",
+    "Migrar a PostgreSQL con cifrado en reposo y en tránsito",
+    "Configurar Redis como caché de consultas frecuentes (reducción estimada 60% en latencia)",
+    "Implementar validación de datos con Great Expectations en pipeline ETL",
+    "Agregar autenticación OAuth2 a todas las APIs de datos",
+    "Realizar auditoría de accesibilidad WCAG 2.1 en dashboards"
+  ],
+  "metricas": [
+    {"nombre": "Salud general de datos", "valor": "68/100", "benchmark": "80/100", "estado": "⚠️"},
+    {"nombre": "Completitud de registros", "valor": "78%", "benchmark": "95%", "estado": "🔴"},
+    {"nombre": "Tiempo promedio de query", "valor": "1.2s", "benchmark": "<500ms", "estado": "🔴"},
+    {"nombre": "Uptime de APIs", "valor": "99.2%", "benchmark": "99.9%", "estado": "🟡"},
+    {"nombre": "Cobertura de tests", "valor": "45%", "benchmark": "80%", "estado": "🔴"},
+    {"nombre": "Vulnerabilidades críticas", "valor": "3", "benchmark": "0", "estado": "🔴"}
+  ],
+  "precio": {
+    "mensual": 29,
+    "anual": 299
+  }
+}

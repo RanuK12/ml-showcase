@@ -1,0 +1,8 @@
+{
+ "name": "AGiXT_Interactive_temp_clone",
+ "archived": "2026-06-24T14:16:57.140453",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/AGiXT_Interactive_temp_clone.tar.gz",
+ "orig_mb": 0,
+ "reason": "Clone temporal innecesario",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore AGiXT_Interactive_temp_clone"
+}

@@ -1,0 +1,8 @@
+{
+ "name": "Bot-Copy-Trading-Ranuk_temp_clone",
+ "archived": "2026-06-24T14:17:08.075893",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Bot-Copy-Trading-Ranuk_temp_clone.tar.gz",
+ "orig_mb": 0,
+ "reason": "Clone duplicado",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Bot-Copy-Trading-Ranuk_temp_clone"
+}

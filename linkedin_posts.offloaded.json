@@ -1,0 +1,8 @@
+{
+ "name": "linkedin_posts",
+ "archived": "2026-06-26T19:30:42.597492",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/linkedin_posts.tar.gz",
+ "orig_mb": 0,
+ "reason": "0MB, sin actividad.",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore linkedin_posts"
+}

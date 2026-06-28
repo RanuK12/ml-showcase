@@ -1,0 +1,8 @@
+{
+ "name": "archestra",
+ "archived": "2026-06-25T09:31:20.527943",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/archestra.tar.gz",
+ "orig_mb": 277,
+ "reason": "277MB, sin uso",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore archestra"
+}

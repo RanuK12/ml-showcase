@@ -1,0 +1,8 @@
+{
+ "name": "memanto",
+ "archived": "2026-06-26T19:30:44.942138",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/memanto.tar.gz",
+ "orig_mb": 33,
+ "reason": "33MB, sin claro propósito de plata.",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore memanto"
+}

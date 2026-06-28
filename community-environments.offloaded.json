@@ -1,7 +1,8 @@
 {
  "name": "community-environments",
- "recover_from": "github",
- "url": "https://github.com/PrimeIntellect-ai/community-environments.git",
- "restore": "git clone https://github.com/PrimeIntellect-ai/community-environments.git ~/.ranukita/projects/community-environments",
- "note": "Archivado y luego borrado de OneDrive (backfire de cache). Recuperá del repo GitHub."
+ "archived": "2026-06-24T14:17:37.046370",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/community-environments.tar.gz",
+ "orig_mb": 148,
+ "reason": "Entorno comunitario inactivo",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore community-environments"
 }

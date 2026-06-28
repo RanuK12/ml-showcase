@@ -1,0 +1,8 @@
+{
+ "name": "LLM-Proxy",
+ "archived": "2026-06-26T09:30:36.795932",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/LLM-Proxy.tar.gz",
+ "orig_mb": 37,
+ "reason": "Duplicado de openrouter-proxy",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore LLM-Proxy"
+}

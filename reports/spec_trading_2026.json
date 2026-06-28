@@ -1,0 +1,68 @@
+{
+  "title": "Oportunidades de Trading Automatizado 2026",
+  "subtitle": "Análisis de APIs, Bots y Estrategias para Ingresos Pasivos",
+  "date": "2026-06-25",
+  "logo_path": "~/Apps/ranukita-bridge/assets/ranukita-logo.png",
+  "watermark_path": "~/Apps/ranukita-bridge/assets/minilogo2.png",
+  "footer": "Ranukita Bot — Propiedad de Ranuk IT Solutions | ranuk.dev | ranukorbit.com",
+  "design": {
+    "background_color": "#1a1a2e",
+    "text_color": "#00d4ff",
+    "highlight_color": "#ffd700"
+  },
+  "sections": [
+    {
+      "heading": "1. Resumen Ejecutivo",
+      "bullets": [
+        "El trading automatizado permite operar 24/7 usando bots conectados a APIs de exchanges (Binance, Bybit, OKX, etc.).",
+        "Los ingresos potenciales van desde $50/hr en freelance (Upwork/Fiverr) hasta $1000 por desarrollo de bots personalizados.",
+        "Las estrategias más rentables en 2026 son: arbitraje (aprovechar diferencias de precio entre exchanges), copy trading (replicar traders verificados), y DCA/Grid (promediar costos y operar rangos).",
+        "Riesgo principal: exposición de API Keys y vulnerabilidades en terceros. Recomendación: usar claves con permisos limitados (solo READ/ORDER) y activar IP binding."
+      ]
+    },
+    {
+      "heading": "2. Tabla Comparativa: APIs de Trading",
+      "table": {
+        "headers": ["API", "Exchanges", "Lenguajes", "Costo", "Documentación", "Notas"],
+        "rows": [
+          ["Binance API", "Binance, Binance.US", "Python, Node.js, Go, Java", "Gratis", "https://github.com/binance/binance-spot-api-docs", "Requiere KYC completado para generar claves con permisos de trading."],
+          ["Bybit API", "Bybit", "Python, Node.js, C#", "Gratis", "https://bybit-exchange.github.io/docs/", "Límite de 1200 requests/minuto por IP."],
+          ["OKX API", "OKX", "Python, REST/WS", "Gratis", "https://www.okx.com/docs-v5/es/", "Soporte para futuros y spot."],
+          ["TradingView Webhooks", "Cualquier exchange", "Python, Node.js", "Gratis (básico)", "https://www.tradingview.com/rest-api-spec/", "Envía señales a tus bots vía webhooks."]
+        ]
+      }
+    },
+    {
+      "heading": "3. Bots y Plataformas Recomendadas",
+      "table": {
+        "headers": ["Plataforma", "Estrategias", "Exchanges", "Costo", "Enlace"],
+        "rows": [
+          ["3Commas", "DCA, Grid, Signals", "Binance, OKX, Bybit, KuCoin", "$29/mes", "https://3commas.io"],
+          ["Cryptohopper", "Arbitraje, Copy Trading, Trend Following", "35+ exchanges", "$19-$99/mes", "https://www.cryptohopper.com"],
+          ["WunderTrading", "Copy Trading, Signals, DCA", "Binance, Bybit, OKX", "$14.95-$49.95/mes", "https://wundertrading.com"],
+          ["Binance Bots", "Grid, DCA, Futures", "Binance", "Gratis (comisiones)", "https://www.binance.com/es/trading-bots"]
+        ]
+      }
+    },
+    {
+      "heading": "4. Estrategias Recurrentes (2026)",
+      "bullets": [
+        "Arbitraje: Aprovechar diferencias de precio entre exchanges (ej: BTC en Binance vs Bybit). Requiere baja latencia y múltiples cuentas con KYC.",
+        "Copy Trading: Replicar señales de traders verificados. Plataformas: WunderTrading, 3Commas.",
+        "DCA (Dollar Cost Averaging): Invertir montos fijos periódicamente para reducir impacto de volatilidad. Ideal para newcomers.",
+        "Grid Trading: Operar en rangos de precios predefinidos. Ejemplo: comprar cada $1000 abajo y vender cada $1000 arriba.",
+        "Señales + Webhooks: Usar TradingView para generar señales y enviarlas a tu bot via webhook (Python/Node.js)."
+      ]
+    },
+    {
+      "heading": "5. Riesgos y Recomendaciones",
+      "bullets": [
+        "🔴 **API Key Leak**: Nunca compartas tu clave privada. Usa claves con permisos limitados (solo ORDER/READ) y activa IP binding.",
+        "⚠️ **KYC Obligatorio**: Exchanges como Binance requieren KYC completado para generar claves de trading.",
+        "⚡ **Volatilidad del Mercado**: Las estrategias de arbitraje o grid pueden fallar en mercados laterales o con baja liquidez.",
+        "🛡️ **Seguridad**: Usa VPNs con IP fija, autenticación 2FA, y monitorea logs de tus bots en tiempo real.",
+        "📊 **Backtesting**: Siempre prueba tu estrategia en un entorno de test (Binance Testnet) antes de usar dinero real."
+      ]
+    }
+  ]
+}

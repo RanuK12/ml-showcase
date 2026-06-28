@@ -1,0 +1,93 @@
+╔══════════════════════════════════════════════════════════════╗
+║  PLANTILLA DE OUTREACH — Ranuk IT Solutions                ║
+║  Fórmula: Observación → Problema → Resultado → CTA         ║
+╚══════════════════════════════════════════════════════════════╝
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📧 EMAIL (para SkyMailer)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Asunto: [observación específica de su negocio] — ej: "Vi que [empresa] está migrando a Shopify"
+
+Cuerpo:
+
+Hola [Nombre],
+
+Vi que [empresa] está [observación concreta: lanzando X, migrando Y, compitiendo en Z].
+
+Me llamó la atención porque [problema que cuesta plata: ej. "muchos e-commerces pierden hasta un 20% de conversión en el checkout actual"].
+
+En Ranuk IT ayudamos a empresas como [referencia/vertical] a [resultado concreto medible: ej. "subir 30% la velocidad del sitio y 15% la conversión en 3 semanas"].
+
+¿Te copa una llamada de 15 min esta semana para ver si podemos ayudarlos con esto?
+
+Saludos,
+Emilio Ranucoli
+Ranuk IT Solutions — ranuk.dev
++39 344 5721753
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💼 LINKEDIN (mensaje InMail / conexión)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Hola [Nombre],
+
+Vi que en [empresa] están [observación específica, ej: "contratando devs para el equipo de accesibilidad"]. 
+
+Justamente en Ranuk IT nos especializamos en [servicio: ej: "auditorías WCAG y remediación de accesibilidad web"]. Ayudamos a [cliente similar] a pasar de 0 a 100% compliant en 4 semanas.
+
+¿Te sirve que te mande un par de casos concretos?
+
+Saludos,
+Emilio
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 EJEMPLO CONCRETO (WCAG / accesibilidad)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Asunto: Accesibilidad web — riesgo legal en [país/industria]
+
+Hola [Nombre],
+
+Vi que [empresa] está en el rubro [rubro], donde las demandas por sitios inaccesibles vienen aumentando un 40% interanual en [país].
+
+Hicimos una auditoría rápida de su homepage con axe-core y encontramos [N] violaciones críticas de WCAG 2.1 AA — desde contraste de color hasta navegación por teclado. Esto no solo afecta a usuarios con discapacidad, sino que expone a la empresa a multas de hasta [monto] en [país/región].
+
+En Ranuk IT solucionamos esto en 2-3 semanas, con reporte detallado + remediación + certificación.
+
+¿Te interesa que te mande la auditoría gratuita de su homepage?
+
+Saludos,
+Emilio Ranucoli
+Ranuk IT Solutions — ranuk.dev
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📋 CHECKLIST PRE-ENVÍO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[ ] Personalicé: nombre, empresa, observación real
+[ ] Un solo CTA claro (reunión / demo / auditoría gratis)
+[ ] Verifiqué claims con rk-verify-claims.py
+[ ] Asunto corto (<60 chars)
+[ ] Sin adjuntos pesados (>5 MB)
+[ ] Follow-up agendado (día+3 si no responde)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📅 SECUENCIA DE FOLLOW-UP (3 toques)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Día 0: Envío inicial
+Día 3: Follow-up con valor agregado (artículo/caso/dato relevante)
+         "Hola [Nombre], te comparto este caso de [cliente similar] que logró [resultado]. ¿Te parece si lo vemos?"
+Día 7: Último toque — cierre suave
+         "Hola [Nombre], si ahora no es buen momento, avísame y retomo en unos meses. ¡Suerte con [proyecto]!"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔧 VARIABLES POR SERVICIO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+• Accesibilidad WCAG: "auditoría gratuita de su homepage", "riesgo legal", "multas"
+• Web scraping: "monitoreo de precios de competidores", "data-driven decisions"
+• Automatización: "eliminamos tareas manuales que le roban [N] hs/semana"
+• Landing/Web: "subimos conversión [X]%", "velocidad de carga"
+• Trading bots: "ejecución algorítmica", "backtesting", "señales en tiempo real"
