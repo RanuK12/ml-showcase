@@ -1,0 +1,76 @@
+{
+  "title": "ADA-AUDITS Sales Brochure",
+  "author": "Ranukita",
+  "pages": 2,
+  "dark": true,
+  "watermark": "Ranukita Bot — Propiedad de Ranuk IT Solutions | ranuk.dev | ranukorbit.com",
+  "watermark_pos": "footer",
+  "colors": {
+    "bg": "#1a1a2e",
+    "accent": "#00d4ff",
+    "gold": "#ffd700"
+  },
+  "logo": {
+    "path": "~/Desktop/Oficina_Ranuk/brochures/ranukita-logo-official.png",
+    "width": 180,
+    "align": "center"
+  },
+  "sections": {
+    "page1": {
+      "title": "ADA Audits — Auditorías de Accesibilidad Web",
+      "subtitle": "Garantizá que tu sitio cumpla con WCAG y evités sanciones legales",
+      "paragraphs": [
+        "Cada minuto que tu sitio no es accesible, perdés clientes y te exponés a multas por incumplimiento de regulaciones internacionales (WCAG 2.1/2.2, ADA, EN 301 549).",
+        "Nuestras auditorías combinan tecnología de punta con revisión manual experta para identificar y corregir los problemas de accesibilidad que impactan en tu negocio."
+      ],
+      "bullets": [
+        "Auditoría técnica automatizada + manual por expertos",
+        "Informe detallado con hallazgos, priorización y pasos concretos",
+        "Asesoramiento para implementar las correcciones",
+        "Certificado de cumplimiento WCAG",
+        "Soporte continuo para mantener la accesibilidad"
+      ]
+    },
+    "page2": {
+      "title": "Planes y Contacto",
+      "paragraphs": [
+        "Elegí el plan que mejor se adapte a tus necesidades. Todos incluyen nuestra garantía de calidad y soporte experto."
+      ],
+      "pricing": {
+        "tiers": [
+          {
+            "name": "Básico",
+            "price": 490,
+            "currency": "USD",
+            "features": ["Auditoría automatizada", "Informe básico", "Checklist de acciones"],
+            "delivery": "48 horas"
+          },
+          {
+            "name": "Profesional",
+            "price": 990,
+            "currency": "USD",
+            "features": ["Auditoría automatizada + manual", "Informe detallado", "Priorización de hallazgos", "Recomendaciones técnicas", "Certificado WCAG"],
+            "delivery": "7 días",
+            "recommended": true
+          },
+          {
+            "name": "Enterprise",
+            "price": "Custom",
+            "currency": "USD",
+            "features": ["Auditoría completa", "Informe ejecutivo + técnico", "Plan de implementación", "Soporte 30 días", "Re-auditoría a los 6 meses"],
+            "delivery": "14 días"
+          }
+        ]
+      },
+      "cta": {
+        "text": "Agendá una llamada de 15 minutos para evaluar tu sitio",
+        "email": "emilio@ranuk.dev",
+        "subject": "Cotización ADA Audits — [Tu sitio]"
+      },
+      "qr": {
+        "url": "https://ranuk.dev/ada-audits",
+        "size": 120
+      }
+    }
+  }
+}

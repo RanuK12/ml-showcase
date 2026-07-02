@@ -1,0 +1,78 @@
+# Informe de Bounties: Algora & GitHub
+**Fecha:** 2026-06-30
+**Investigador:** Ranukita Bot
+**Fuentes:** Algora, GitHub
+
+---
+
+## Resumen Ejecutivo
+- **Total de bounties encontrados:** 0
+- **Bounties con alta viabilidad:** 0
+- **Bounties con baja viabilidad:** 0
+- **Recomendaciones clave:** No se encontraron bounties frescos y sin asignar en las plataformas consultadas que cumplan con los criterios de búsqueda (frescos, sin asignar, bajo competencia, stack Python/JS/TS, sin farm/spam, sin crypto core).
+
+---
+
+## Metodología
+### Fuentes consultadas:
+1. **Algora** ([https://algora.io/](https://algora.io/)):
+   - Plataforma especializada en bounties para proyectos de código abierto.
+   - Se aplicaron filtros: Lenguaje, dificultad, recompensa, fecha de expiración.
+2. **GitHub**:
+   - Búsqueda avanzada con keywords como `"bounty"`, `"issue"`, `"reward"`.
+   - Repositorios populares y con actividad reciente.
+3. **Otras fuentes**:
+   - Se descartaron repositorios con nombres tipo `bounty/bounties/bug-bounty/skills/challenge/playground`.
+   - Se excluyeron proyectos crypto core (Solidity/Rust/Go on-chain) y Expensify/App.
+
+### Criterios de evaluación:
+| **Criterio**          | **Descripción**                                                                 |
+|-----------------------|---------------------------------------------------------------------------------|
+| Recompensa            | Monto en USD o cripto.                                                          |
+| Dificultad            | Baja/Media/Alta (basado en descripción y requisitos).                           |
+| Expiración            | Fecha límite para reclamar el bounty.                                           |
+| Repositorio           | Popularidad y actividad del proyecto (estrellas, commits recientes).           |
+| Requisitos técnicos   | Lenguajes/frameworks requeridos.                                                |
+| Viabilidad técnica    | Coincidencia con habilidades conocidas.                                         |
+| Comunidad/Apoyo       | Disponibilidad de mentores o documentación.                                     |
+
+---
+
+## Lista de Bounties Encontrados
+No se encontraron bounties que cumplan con los criterios especificados.
+
+---
+
+## Evaluación de Viabilidad
+No aplica.
+
+---
+
+## Pasos Siguientes
+1. **Monitorear fuentes**:
+   - Revisar Algora e IssueHunt diariamente para bounties frescos.
+   - Configurar alertas en GitHub para repositorios de interés con keywords como `bounty`, `good first issue`.
+2. **Ampliar criterios**:
+   - Considerar bounties con stack flexible (ej: Python/JS/TS + otros).
+   - Incluir repositorios con actividad moderada pero sin farm/spam.
+3. **Contactar a mantainers**:
+   - Si un bounty parece prometedor pero no está listado, contactar al mantainer directamente para proponer una solución.
+
+---
+
+## Riesgos y Advertencias
+- **Bounties no pagados**: Algunos proyectos no cumplen con pagar. Verificar reputación del mantainer.
+- **Competencia alta**: Bounties populares (>$700) suelen tener muchos competidores.
+- **Repositorios inactivos**: Proyectos sin actividad reciente pueden no mergear PRs.
+
+---
+
+## Conclusión
+No se encontraron bounties viables en las plataformas consultadas para la fecha actual. Se recomienda:
+- Monitorear fuentes activamente.
+- Ampliar criterios de búsqueda.
+- Contactar a mantainers directamente para oportunidades no listadas.
+
+---
+
+Ranukita Bot — Propiedad de Ranuk IT Solutions | ranuk.dev | ranukorbit.com

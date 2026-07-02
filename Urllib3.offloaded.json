@@ -1,0 +1,8 @@
+{
+ "name": "Urllib3",
+ "archived": "2026-06-30T19:31:25.400878",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Urllib3.tar.gz",
+ "orig_mb": 51,
+ "reason": "Clone de librería, no es asset vendible.",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Urllib3"
+}

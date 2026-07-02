@@ -1,0 +1,8 @@
+{
+ "name": "Bounties",
+ "archived": "2026-06-30T19:31:28.254236",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Bounties.tar.gz",
+ "orig_mb": 0,
+ "reason": "Sin remote, 9999 días inactivo, placeholder vacío.",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Bounties"
+}

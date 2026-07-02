@@ -1,0 +1,8 @@
+{
+ "name": "Onyx",
+ "archived": "2026-06-30T19:31:22.045936",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Onyx.tar.gz",
+ "orig_mb": 6,
+ "reason": "Sin foco claro de monetización, experimento AI.",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Onyx"
+}

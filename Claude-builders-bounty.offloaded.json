@@ -1,0 +1,8 @@
+{
+ "name": "Claude-builders-bounty",
+ "archived": "2026-06-30T19:31:26.880351",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Claude-builders-bounty.tar.gz",
+ "orig_mb": 0,
+ "reason": "Sin commits en 22 días, probable bounty perdido.",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Claude-builders-bounty"
+}
