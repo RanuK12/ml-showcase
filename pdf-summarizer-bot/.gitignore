@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs and databases
+*.log
+*.sqlite
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Docker
+.dockerignore
+
+# Local overrides
+.env.local
