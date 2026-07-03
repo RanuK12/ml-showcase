@@ -1,8 +1,0 @@
-{
- "name": "rustchain-bounties",
- "archived": "2026-06-27T09:30:53.010640",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/rustchain-bounties.tar.gz",
- "orig_mb": 10,
- "reason": "Stack no dominante, sin señal",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore rustchain-bounties"
-}

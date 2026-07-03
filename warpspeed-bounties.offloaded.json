@@ -1,8 +1,0 @@
-{
- "name": "warpspeed-bounties",
- "archived": "2026-06-27T09:30:58.548877",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/warpspeed-bounties.tar.gz",
- "orig_mb": 0,
- "reason": "Sin bounty activo ganable",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore warpspeed-bounties"
-}

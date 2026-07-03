@@ -1,7 +1,0 @@
-{
- "name": "Ranuk_Assistant",
- "recover_from": "github",
- "url": "https://github.com/RanuK12/Ranuk_Assistant.git",
- "restore": "git clone https://github.com/RanuK12/Ranuk_Assistant.git ~/.ranukita/projects/Ranuk_Assistant",
- "note": "Archivado y luego borrado de OneDrive (backfire de cache). Recuperá del repo GitHub."
-}

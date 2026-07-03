@@ -1,8 +1,0 @@
-{
- "name": "pricing-api",
- "archived": "2026-06-27T19:30:38.310652",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/pricing-api.tar.gz",
- "orig_mb": 0,
- "reason": "0 MB, 1 día, experimento temprano.",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore pricing-api"
-}

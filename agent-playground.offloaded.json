@@ -1,7 +1,0 @@
-{
- "name": "agent-playground",
- "recover_from": "github",
- "url": "https://github.com/xevrion-v2/agent-playground.git",
- "restore": "git clone https://github.com/xevrion-v2/agent-playground.git ~/.ranukita/projects/agent-playground",
- "note": "Archivado y luego borrado de OneDrive (backfire de cache). Recuperá del repo GitHub."
-}

@@ -1,8 +1,0 @@
-{
- "name": "chrome-tab-cleaner",
- "archived": "2026-06-26T09:30:48.535078",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/chrome-tab-cleaner.tar.gz",
- "orig_mb": 0,
- "reason": "Extensión menor",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore chrome-tab-cleaner"
-}

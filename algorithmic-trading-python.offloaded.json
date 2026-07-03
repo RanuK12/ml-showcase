@@ -1,8 +1,0 @@
-{
- "name": "algorithmic-trading-python",
- "archived": "2026-06-25T09:31:59.382375",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/algorithmic-trading-python.tar.gz",
- "orig_mb": 39,
- "reason": "39MB, curso sin uso",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore algorithmic-trading-python"
-}

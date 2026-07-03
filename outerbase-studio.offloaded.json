@@ -1,8 +1,0 @@
-{
- "name": "outerbase-studio",
- "archived": "2026-06-25T09:31:49.561288",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/outerbase-studio.tar.gz",
- "orig_mb": 11,
- "reason": "11MB, sin actividad en 116 días",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore outerbase-studio"
-}

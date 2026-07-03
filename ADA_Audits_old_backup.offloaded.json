@@ -1,8 +1,0 @@
-{
- "name": "ADA_Audits_old_backup",
- "archived": "2026-06-24T14:16:54.349649",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/ADA_Audits_old_backup.tar.gz",
- "orig_mb": 0,
- "reason": "Backup duplicado de ADA-AUDITS",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore ADA_Audits_old_backup"
-}

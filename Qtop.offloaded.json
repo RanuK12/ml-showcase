@@ -1,8 +1,0 @@
-{
- "name": "Qtop",
- "archived": "2026-06-30T19:31:23.706814",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Qtop.tar.gz",
- "orig_mb": 11,
- "reason": "Proyecto chico sin conexión con goals de plata.",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Qtop"
-}

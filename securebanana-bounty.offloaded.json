@@ -1,7 +1,0 @@
-{
- "name": "securebanana-bounty",
- "recover_from": "github",
- "url": "https://github.com/SecureBananaLabs/bug-bounty.git",
- "restore": "git clone https://github.com/SecureBananaLabs/bug-bounty.git ~/.ranukita/projects/securebanana-bounty",
- "note": "Archivado y luego borrado de OneDrive (backfire de cache). Recuperá del repo GitHub."
-}

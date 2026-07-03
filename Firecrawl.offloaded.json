@@ -1,8 +1,0 @@
-{
- "name": "Firecrawl",
- "archived": "2026-06-30T19:31:18.622870",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Firecrawl.tar.gz",
- "orig_mb": 147,
- "reason": "Clon grande, sin actividad real reciente, dispersa foco de scraping pago.",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Firecrawl"
-}

@@ -1,8 +1,0 @@
-{
- "name": "Pampa_Amsterdam",
- "archived": "2026-06-25T19:30:32.193801",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Pampa_Amsterdam.tar.gz",
- "orig_mb": 0,
- "reason": "Proyecto muerto, sin ingresos",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Pampa_Amsterdam"
-}

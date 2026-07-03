@@ -1,8 +1,0 @@
-{
- "name": "ig-unfollow",
- "archived": "2026-06-26T19:30:37.688980",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/ig-unfollow.tar.gz",
- "orig_mb": 0,
- "reason": "0MB, sin uso.",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore ig-unfollow"
-}

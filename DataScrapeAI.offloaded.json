@@ -1,8 +1,0 @@
-{
- "name": "DataScrapeAI",
- "archived": "2026-06-26T09:30:33.049964",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/DataScrapeAI.tar.gz",
- "orig_mb": 0,
- "reason": "0MB, proyecto vacío",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore DataScrapeAI"
-}

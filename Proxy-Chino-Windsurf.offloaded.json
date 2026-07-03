@@ -1,8 +1,0 @@
-{
- "name": "Proxy-Chino-Windsurf",
- "archived": "2026-06-26T09:30:44.007335",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Proxy-Chino-Windsurf.tar.gz",
- "orig_mb": 0,
- "reason": "Sin uso actual",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Proxy-Chino-Windsurf"
-}

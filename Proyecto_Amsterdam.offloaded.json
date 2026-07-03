@@ -1,8 +1,0 @@
-{
- "name": "Proyecto_Amsterdam",
- "archived": "2026-06-25T19:30:34.278040",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Proyecto_Amsterdam.tar.gz",
- "orig_mb": 1,
- "reason": "Duplicado de Pampa_Amsterdam",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Proyecto_Amsterdam"
-}

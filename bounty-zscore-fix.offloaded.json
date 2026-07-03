@@ -1,8 +1,0 @@
-{
- "name": "bounty-zscore-fix",
- "archived": "2026-06-24T14:17:31.284084",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/bounty-zscore-fix.tar.gz",
- "orig_mb": 0,
- "reason": "Fix puntual sin uso",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore bounty-zscore-fix"
-}

@@ -1,8 +1,0 @@
-{
- "name": "review-sentiment-tool",
- "archived": "2026-06-27T09:30:51.252023",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/review-sentiment-tool.tar.gz",
- "orig_mb": 1,
- "reason": "Script sin producto final",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore review-sentiment-tool"
-}

@@ -1,8 +1,0 @@
-{
- "name": "WizardLM",
- "archived": "2026-06-25T09:31:55.131090",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/WizardLM.tar.gz",
- "orig_mb": 53,
- "reason": "53MB, experimento LLM",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore WizardLM"
-}

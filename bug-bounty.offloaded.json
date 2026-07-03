@@ -1,7 +1,0 @@
-{
- "name": "bug-bounty",
- "recover_from": "github",
- "url": "https://github.com/RanuK12/bug-bounty.git",
- "restore": "git clone https://github.com/RanuK12/bug-bounty.git ~/.ranukita/projects/bug-bounty",
- "note": "Archivado y luego borrado de OneDrive (backfire de cache). Recuperá del repo GitHub."
-}

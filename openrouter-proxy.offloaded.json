@@ -1,8 +1,0 @@
-{
- "name": "openrouter-proxy",
- "archived": "2026-06-26T19:30:48.358009",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/openrouter-proxy.tar.gz",
- "orig_mb": 37,
- "reason": "37MB, sin monetización.",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore openrouter-proxy"
-}

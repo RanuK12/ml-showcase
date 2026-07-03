@@ -1,8 +1,0 @@
-{
- "name": "opportunity-automation",
- "archived": "2026-06-26T19:30:49.980534",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/opportunity-automation.tar.gz",
- "orig_mb": 0,
- "reason": "0MB, sin avance.",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore opportunity-automation"
-}

@@ -1,8 +1,0 @@
-{
- "name": "Scraping-Bundle-Expansion",
- "archived": "2026-06-25T19:30:40.516502",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Scraping-Bundle-Expansion.tar.gz",
- "orig_mb": 0,
- "reason": "Sin uso, mantener bundle base",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Scraping-Bundle-Expansion"
-}

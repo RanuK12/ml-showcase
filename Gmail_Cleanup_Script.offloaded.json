@@ -1,8 +1,0 @@
-{
- "name": "Gmail_Cleanup_Script",
- "archived": "2026-06-26T09:30:34.932366",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Gmail_Cleanup_Script.tar.gz",
- "orig_mb": 0,
- "reason": "Script menor, no estratégico",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Gmail_Cleanup_Script"
-}

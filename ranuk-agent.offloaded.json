@@ -1,7 +1,0 @@
-{
- "name": "ranuk-agent",
- "recover_from": "github",
- "url": "git@github.com:RanuK12/Ranuk-Outreach.git",
- "restore": "git clone git@github.com:RanuK12/Ranuk-Outreach.git ~/.ranukita/projects/ranuk-agent",
- "note": "Archivado y luego borrado de OneDrive (backfire de cache). Recuperá del repo GitHub."
-}

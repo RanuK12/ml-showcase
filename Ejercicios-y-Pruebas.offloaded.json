@@ -1,8 +1,0 @@
-{
- "name": "Ejercicios-y-Pruebas",
- "archived": "2026-06-24T19:31:04.895589",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Ejercicios-y-Pruebas.tar.gz",
- "orig_mb": 4,
- "reason": "Código de práctica",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Ejercicios-y-Pruebas"
-}

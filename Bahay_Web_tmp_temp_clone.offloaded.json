@@ -1,8 +1,0 @@
-{
- "name": "Bahay_Web_tmp_temp_clone",
- "archived": "2026-06-24T14:17:05.361691",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Bahay_Web_tmp_temp_clone.tar.gz",
- "orig_mb": 0,
- "reason": "Clone temporal",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Bahay_Web_tmp_temp_clone"
-}

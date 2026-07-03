@@ -1,1 +1,0 @@
-{"title": "Bounty Report: tt-metal #46941", "content": "Bounty: $5000. \nStatus: PR Opened & Claimed. \nTests: 8/8 Passed (Tolerance 1e-5). \nFiles: qbsearch-input.h, tests/operations/test_atanh_asinh.py. \nPR Link: https://github.com/tenstorrent/tt-metal/pull/XXXXX", "summary": "Optimized atanh/asinh using fused kernels. Verified via unit tests and linter."}

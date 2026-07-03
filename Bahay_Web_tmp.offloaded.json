@@ -1,7 +1,0 @@
-{
- "name": "Bahay_Web_tmp",
- "recover_from": "github",
- "url": "https://github.com/RanuK12/Bahay_Web_tmp.git",
- "restore": "git clone https://github.com/RanuK12/Bahay_Web_tmp.git ~/.ranukita/projects/Bahay_Web_tmp",
- "note": "Archivado y luego borrado de OneDrive (backfire de cache). Recuperá del repo GitHub."
-}

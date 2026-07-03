@@ -1,8 +1,0 @@
-{
- "name": "skills-copilot-codespaces-vscode",
- "archived": "2026-06-27T09:30:57.216935",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/skills-copilot-codespaces-vscode.tar.gz",
- "orig_mb": 0,
- "reason": "Configuraciones, no proyecto",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore skills-copilot-codespaces-vscode"
-}

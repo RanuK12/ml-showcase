@@ -1,8 +1,0 @@
-Bounty Top - 2026-06-16
-Aquí están los 3 mejores bounties detectados para hoy:
-
-1. Fix de validación en procesamiento de datasets (Python) - $350
-2. Mejorar manejo de errores en Auth Middleware (JS/TS) - $200
-3. Agregar endpoint de exportación de logs (FastAPI) - $400
-
-Seleccioná uno y arranco el pipeline de calidad (Análisis -> Fix -> Test -> Review -> PR).

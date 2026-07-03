@@ -1,8 +1,0 @@
-{
- "name": "armory",
- "archived": "2026-06-25T09:30:57.938794",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/armory.tar.gz",
- "orig_mb": 313,
- "reason": "313MB, experimento de seguridad",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore armory"
-}

@@ -1,8 +1,0 @@
-{
- "name": "Flight-Price-Alert-clone",
- "archived": "2026-06-29T09:30:37.553837",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Flight-Price-Alert-clone.tar.gz",
- "orig_mb": 19,
- "reason": "Clon duplicado del principal, sin diff real",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Flight-Price-Alert-clone"
-}

@@ -1,8 +1,0 @@
-{
- "name": "binance-scalper",
- "archived": "2026-06-25T19:30:52.067719",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/binance-scalper.tar.gz",
- "orig_mb": 0,
- "reason": "Sin actividad, duplicado",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore binance-scalper"
-}

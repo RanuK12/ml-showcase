@@ -1,8 +1,0 @@
-{
- "name": "tt-metal",
- "archived": "2026-06-25T09:31:39.652067",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/tt-metal.tar.gz",
- "orig_mb": 562,
- "reason": "562MB, fork sin contribución",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore tt-metal"
-}

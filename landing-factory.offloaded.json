@@ -1,7 +1,0 @@
-{
- "name": "landing-factory",
- "recover_from": "github",
- "url": "https://github.com/RanuK12/landing-factory.git",
- "restore": "git clone https://github.com/RanuK12/landing-factory.git ~/.ranukita/projects/landing-factory",
- "note": "Archivado y luego borrado de OneDrive (backfire de cache). Recuperá del repo GitHub."
-}

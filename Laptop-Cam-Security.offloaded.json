@@ -1,8 +1,0 @@
-{
- "name": "Laptop-Cam-Security",
- "archived": "2026-06-26T09:30:38.770311",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Laptop-Cam-Security.tar.gz",
- "orig_mb": 0,
- "reason": "Sin uso comercial",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Laptop-Cam-Security"
-}

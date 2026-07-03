@@ -1,7 +1,0 @@
-{
- "name": "ViMax",
- "recover_from": "github",
- "url": "https://github.com/RanuK12/ViMax.git",
- "restore": "git clone https://github.com/RanuK12/ViMax.git ~/.ranukita/projects/ViMax",
- "note": "Archivado y luego borrado de OneDrive (backfire de cache). Recuperá del repo GitHub."
-}

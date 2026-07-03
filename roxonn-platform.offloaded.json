@@ -1,8 +1,0 @@
-{
- "name": "roxonn-platform",
- "archived": "2026-06-25T09:31:51.933323",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/roxonn-platform.tar.gz",
- "orig_mb": 8,
- "reason": "8MB, sin actividad en 170 días",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore roxonn-platform"
-}

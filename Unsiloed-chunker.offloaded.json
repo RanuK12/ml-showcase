@@ -1,8 +1,0 @@
-{
- "name": "Unsiloed-chunker",
- "archived": "2026-06-25T19:30:46.381287",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Unsiloed-chunker.tar.gz",
- "orig_mb": 0,
- "reason": "Sin propósito de plata",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Unsiloed-chunker"
-}

@@ -1,7 +1,0 @@
-{
- "name": "My-Agents-LLM",
- "recover_from": "github",
- "url": "https://github.com/RanuK12/My-Agents-LLM.git",
- "restore": "git clone https://github.com/RanuK12/My-Agents-LLM.git ~/.ranukita/projects/My-Agents-LLM",
- "note": "Archivado y luego borrado de OneDrive (backfire de cache). Recuperá del repo GitHub."
-}

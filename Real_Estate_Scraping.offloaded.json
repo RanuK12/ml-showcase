@@ -1,8 +1,0 @@
-{
- "name": "Real_Estate_Scraping",
- "archived": "2026-06-25T19:30:38.480177",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Real_Estate_Scraping.tar.gz",
- "orig_mb": 1,
- "reason": "Sin monetización, mantener uno",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Real_Estate_Scraping"
-}

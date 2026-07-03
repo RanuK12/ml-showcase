@@ -1,8 +1,0 @@
-{
- "name": "eurobrico-web",
- "archived": "2026-06-26T09:30:57.484849",
- "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/eurobrico-web.tar.gz",
- "orig_mb": 6,
- "reason": "Proyecto cliente sin seguimiento",
- "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore eurobrico-web"
-}
