@@ -1,0 +1,8 @@
+{
+ "name": "awesome-webapp",
+ "archived": "2026-07-03T09:32:05.405941",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/awesome-webapp.tar.gz",
+ "orig_mb": 0,
+ "reason": "0MB, scaffold vacío, no monetizable.",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore awesome-webapp"
+}

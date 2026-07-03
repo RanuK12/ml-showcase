@@ -1,0 +1,8 @@
+{
+ "name": "scraper-utils",
+ "archived": "2026-07-02T19:31:06.443540",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/scraper-utils.tar.gz",
+ "orig_mb": 0,
+ "reason": "Muy genérico, sin integración activa.",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore scraper-utils"
+}
