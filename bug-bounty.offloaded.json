@@ -1,7 +1,8 @@
 {
- "name": "bug-bounty",
- "recover_from": "github",
- "url": "https://github.com/RanuK12/bug-bounty.git",
- "restore": "git clone https://github.com/RanuK12/bug-bounty.git ~/.ranukita/projects/bug-bounty",
- "note": "Archivado y luego borrado de OneDrive (backfire de cache). Recuperá del repo GitHub."
+ "name": "Bug-Bounty",
+ "archived": "2026-07-04T21:22:38.962405",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Bug-Bounty.tar.gz",
+ "orig_mb": 707,
+ "reason": "Sin cobros recientes y alta competencia",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Bug-Bounty"
 }
