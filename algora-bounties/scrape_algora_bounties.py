@@ -11,7 +11,7 @@ from pathlib import Path
 import requests
 
 ORGS = ["formbricks", "twentyhq", "novuhq", "documenso"]
-API_BASE = "https://algora.io/api/orgs/{org}/bounties"
+API_BASE = "https://algora.io/api/bounties?org={org}"
 HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"}
 OUTPUT_DIR = Path(__file__).parent.resolve()
 CSV_PATH = OUTPUT_DIR / "algora_bounties.csv"
@@ -20,10 +20,13 @@ CSV_PATH = OUTPUT_DIR / "algora_bounties.csv"
 def fetch_bounties(org: str) -> list[dict] | None:
     url = API_BASE.format(org=org)
     try:
-        resp = requests.get(url, timeout=10)
+        resp = requests.get(url, timeout=10, headers=HEADERS)
         resp.raise_for_status()
         data = resp.json()
         return data
+    except requests.exceptions.JSONDecodeError as e:
+        print(f"[!] JSONDecodeError fetching {org}: {e} | response text len={len(resp.text)} | snippet={resp.text[:200]}", file=sys.stderr)
+        return None
     except Exception as e:
         print(f"[!] Error fetching {org}: {e}", file=sys.stderr)
         return None
