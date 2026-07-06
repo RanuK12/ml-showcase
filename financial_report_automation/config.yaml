@@ -1,0 +1,30 @@
+reports:
+  - name: "Balance General"
+    type: "balance_sheet"
+    period: "monthly"
+    filters:
+      currency: "USD"
+      include_consolidated: true
+    output:
+      format: "excel"
+      path: "output/balance_general.xlsx"
+
+  - name: "Estado de Resultados"
+    type: "income_statement"
+    period: "quarterly"
+    filters:
+      currency: "EUR"
+      start_date: "2023-01-01"
+      end_date: "2023-12-31"
+    output:
+      format: "csv"
+      path: "output/estado_resultados.csv"
+
+  - name: "Flujo de Efectivo"
+    type: "cash_flow"
+    period: "yearly"
+    filters:
+      company_id: "12345"
+    output:
+      format: "pdf"
+      path: "output/flujo_efectivo.pdf"
