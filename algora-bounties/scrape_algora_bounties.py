@@ -1,80 +1,74 @@
 #!/usr/bin/env python3
 """
-Scrape bounties from Algora API for relevant orgs.
-Uses public endpoints and saves to CSV.
+Scrape bounties from Algora bounties page for relevant orgs.
+Uses web scraping since Algora does not provide a public API for bounties per org.
+
+The public page at https://algora.io/bounties lists all available bounties.
+We filter by the specified orgs and save to CSV.
 """
 import csv
-import json
 import os
 import re
 import sys
 from pathlib import Path
 import requests
 
+# Target orgs (Python/TypeScript, $100-500)
 ORGS = ["formbricks", "twentyhq", "novuhq", "hoppscotch", "documenso"]
-API_BASE = "https://algora.io/api/v1/bounties?org={org}"
-HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"}
 OUTPUT_DIR = Path(__file__).parent.resolve()
 CSV_PATH = OUTPUT_DIR / "algora_bounties.csv"
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8"
+}
 
 
-def fetch_bounties(org: str) -> list[dict] | None:
-    url = API_BASE.format(org=org)
+def fetch_bounties_page() -> str | None:
     try:
-        resp = requests.get(url, timeout=15, headers=HEADERS)
+        resp = requests.get("https://algora.io/bounties", timeout=20, headers=HEADERS)
         resp.raise_for_status()
-        # Algora returns HTML when rate limited or not found; try to extract JSON from HTML
-        try:
-            data = resp.json()
-        except ValueError:
-            # Try to find JSON in script tag (Algora uses SSR)
-            json_match = re.search(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', resp.text, re.DOTALL)
-            if json_match:
-                data = json.loads(json_match.group(1))
-            else:
-                print(f"[!] Could not parse JSON for {org}: HTML response received", file=sys.stderr)
-                return None
-        return data
+        return resp.text
     except Exception as e:
-        print(f"[!] Error fetching {org}: {e}", file=sys.stderr)
+        print(f"[!] Error fetching Algora bounties page: {e}", file=sys.stderr)
         return None
 
 
-def extract_bounty_fields(bounty: dict) -> dict:
-    repo_url = bounty.get("repo_url", bounty.get("repository", {}).get("html_url", ""))
-    return {
-        "org": bounty.get("org", bounty.get("organization", {}).get("login", "")),
-        "repo": repo_url.split("/")[-2] if repo_url else "",
-        "bounty_url": repo_url,
-        "reward_usd": bounty.get("reward", bounty.get("amount", 0)),
-        "status": bounty.get("status", bounty.get("state", "")),
-    }
+def scrape_bounties(text: str) -> list[dict]:
+    bounties = []
+    # Look for bounty cards on the page
+    pattern = re.compile(r'<div[^>]*class="[^"]*bounty[^"]*"[^>]*>.*?<a\s+href="(/bounties/[^"]+)"[^>]*>(.*?)</a>.*?class="[^"]*org[^"]*">\s*([^<]+)\s*</span>.*?class="[^"]*reward[^"]*">\s*([\$\d,]+)\s*</span>', re.DOTALL | re.IGNORECASE)
+    seen = set()
+    for link, title, org, reward in pattern.findall(text):
+        org = org.strip()
+        if org in ORGS and org not in seen:
+            seen.add(org)
+            bounties.append({
+                "org": org,
+                "repo": "",  # We don't have repo from this scrape; leave empty
+                "bounty_url": f"https://algora.io{link}",
+                "reward_usd": int(reward.replace(",", "").replace("$", "")),
+                "status": "open"
+            })
+    return bounties
 
 
-def main():
-    rows = []
-    for org in ORGS:
-        print(f"[+] Fetching bounties for {org}...")
-        bounties = fetch_bounties(org)
-        if not bounties:
-            continue
-        if isinstance(bounties, list):
-            for b in bounties:
-                rows.append(extract_bounty_fields(b))
-        elif isinstance(bounties, dict):
-            # Single bounty object
-            rows.append(extract_bounty_fields(bounties))
+def main() -> int:
+    page = fetch_bounties_page()
+    if not page:
+        print("[!] Failed to fetch bounties page. Exiting.")
+        return 1
 
-    if not rows:
-        print("[!] No bounties fetched. Exiting.")
+    bounties = scrape_bounties(page)
+    if not bounties:
+        print("[!] No bounties found for target orgs. Exiting.")
         return 1
 
     with CSV_PATH.open("w", newline='', encoding='utf-8') as f:
         writer = csv.DictWriter(f, fieldnames=["org", "repo", "bounty_url", "reward_usd", "status"])
         writer.writeheader()
-        writer.writerows(rows)
+        writer.writerows(bounties)
 
-    print(f"[✓] Saved {len(rows)} bounties to {CSV_PATH}")
+    print(f"[✓] Saved {len(bounties)} bounties to {CSV_PATH}")
     return 0
 
 
