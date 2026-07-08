@@ -1,0 +1,8 @@
+{
+ "name": "FinceptTerminal",
+ "archived": "2026-07-08T10:19:47.213238",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/FinceptTerminal.tar.gz",
+ "orig_mb": 70,
+ "reason": "Dashboard financiero sin cliente ni MRR.",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore FinceptTerminal"
+}
