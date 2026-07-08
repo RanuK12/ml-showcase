@@ -1,0 +1,1 @@
+python3 ~/Apps/ranukita-bridge/integrations/Camofox/camofox.py --url <url> --output ~/Desktop/Oficina_Ranuk/reports/auditorias/<nombre>.pdf
