@@ -1,0 +1,8 @@
+{
+ "name": "Gumroad_Launch",
+ "archived": "2026-07-08T19:31:05.789955",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Gumroad_Launch.tar.gz",
+ "orig_mb": 1,
+ "reason": "Sin README, 30d sin commits; sin tracción",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Gumroad_Launch"
+}

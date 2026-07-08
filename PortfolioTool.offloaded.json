@@ -1,0 +1,8 @@
+{
+ "name": "PortfolioTool",
+ "archived": "2026-07-08T19:31:07.761793",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/PortfolioTool.tar.gz",
+ "orig_mb": 0,
+ "reason": "12d sin commit; no mueve aguja de plata",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore PortfolioTool"
+}

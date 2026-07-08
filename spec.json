@@ -1,0 +1,59 @@
+{
+    "title": "Oportunidades de Ingresos",
+    "author": "Ranukita",
+    "date": "2026-06-28",
+    "logo": "~/Apps/ranukita-bridge/assets/ranukita-logo.png",
+    "watermark": "~/Apps/ranukita-bridge/assets/minilogo2.png",
+    "background": "#1a1a2e",
+    "color": "#00d4ff",
+    "highlight": "#ffd700",
+    "content": [
+        {
+            "type": "header",
+            "content": "Oportunidades de Ingresos"
+        },
+        {
+            "type": "paragraph",
+            "content": "Aquí hay una lista de oportunidades de ingresos que pueden ser de interés para Emilio."
+        },
+        {
+            "type": "section",
+            "content": [
+                {
+                    "type": "header",
+                    "content": "Bounties"
+                },
+                {
+                    "type": "paragraph",
+                    "content": "SecureBananaLabs/bug-bounty: $780/bounty"
+                }
+            ]
+        },
+        {
+            "type": "section",
+            "content": [
+                {
+                    "type": "header",
+                    "content": "Plataformas de Freelance"
+                },
+                {
+                    "type": "paragraph",
+                    "content": "Upwork, Fiverr, Gumroad"
+                }
+            ]
+        },
+        {
+            "type": "section",
+            "content": [
+                {
+                    "type": "header",
+                    "content": "Información de Contacto"
+                },
+                {
+                    "type": "paragraph",
+                    "content": "ranucoliemilio@gmail.com"
+                }
+            ]
+        }
+    ]
+}

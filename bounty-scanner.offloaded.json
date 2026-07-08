@@ -1,0 +1,8 @@
+{
+ "name": "bounty-scanner",
+ "archived": "2026-07-08T19:31:11.641785",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/bounty-scanner.tar.gz",
+ "orig_mb": 29,
+ "reason": "15d sin commit; baja señal de cobro",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore bounty-scanner"
+}

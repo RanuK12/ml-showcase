@@ -1,0 +1,8 @@
+{
+ "name": "DevTrack",
+ "archived": "2026-07-08T19:31:13.640797",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/DevTrack.tar.gz",
+ "orig_mb": 0,
+ "reason": "18d sin commit; sin tracción de plata",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore DevTrack"
+}

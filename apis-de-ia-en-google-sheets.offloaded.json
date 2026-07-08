@@ -1,0 +1,8 @@
+{
+ "name": "apis-de-ia-en-google-sheets",
+ "archived": "2026-07-08T19:31:09.717240",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/apis-de-ia-en-google-sheets.tar.gz",
+ "orig_mb": 0,
+ "reason": "5d sin commit; proyecto lateral sin salida",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore apis-de-ia-en-google-sheets"
+}

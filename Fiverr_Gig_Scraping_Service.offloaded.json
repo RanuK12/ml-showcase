@@ -1,0 +1,8 @@
+{
+ "name": "Fiverr_Gig_Scraping_Service",
+ "archived": "2026-07-08T19:31:03.843847",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/Fiverr_Gig_Scraping_Service.tar.gz",
+ "orig_mb": 0,
+ "reason": "Sin remote, sin commits; muerto",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore Fiverr_Gig_Scraping_Service"
+}
