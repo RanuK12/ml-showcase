@@ -1,0 +1,8 @@
+{
+ "name": "bug-bounty-2",
+ "archived": "2026-07-09T19:30:41.884395",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/bug-bounty-2.tar.gz",
+ "orig_mb": 2,
+ "reason": "Trabajo de oportunidad, baja probabilidad, alto costo de foco",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore bug-bounty-2"
+}
