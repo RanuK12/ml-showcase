@@ -1,0 +1,1 @@
+#!/usr/bin/python\n# -*- coding: utf-8 -*-\n\nimport requests\nfrom bs4 import BeautifulSoup\n\ndef scrape_profile(url):\n    # Implementar la l\u00f3gica de scraping\n    pass
