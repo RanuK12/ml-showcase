@@ -1,0 +1,46 @@
+{
+  "title": "Bounties Ganables - 11 de Julio 2026",
+  "subtitle": "Issues frescos en GitHub con bounties pagos",
+  "author": "Ranukita Bot",
+  "date": "2026-07-11",
+  "theme": "dark",
+  "sections": [
+    {
+      "title": "1. TENSTORRENT/TT-METAL - $1,500 USD",
+      "content": [
+        "**Issue**: Optimise `deg2rad` / `rad2deg` (fp32/bf16)",
+        "**Repo**: [TENSTORRENT/TT-METAL](https://github.com/TENSTORRENT/TT-METAL)",
+        "**Stack**: Python/C++ (kernel optimizations)",
+        "**Competencia**: Baja (10 comentarios)",
+        "**Pasos para resolver**:",
+        "- Clonar el repo y identificar los archivos con las funciones `deg2rad`/`rad2deg` (grep en `src/`).",
+        "- Optimizar las funciones para fp32/bf16 (usar instrucciones SIMD o vectorización).",
+        "- Correr benchmarks (`pytest` o `make test`) y verificar equivalencia numérica.",
+        "- Abrir PR con el cambio y los benchmarks."
+      ]
+    },
+    {
+      "title": "2. ZHANGJIAYANG6835-CYBER/AI-RESEARCH - $150 USD",
+      "content": [
+        "**Issue**: Web Cache Deception → Session Token Leak",
+        "**Repo**: [ZHANGJIAYANG6835-CYBER/AI-RESEARCH](https://github.com/ZHANGJIAYANG6835-CYBER/AI-RESEARCH)",
+        "**Stack**: Python (backend web)",
+        "**Competencia**: Baja (issue fresco)",
+        "**Pasos para resolver**:",
+        "- Clonar el repo e identificar el endpoint vulnerable (grep en `app/` o `routes/`).",
+        "- Aplicar parches para evitar Web Cache Deception (headers `Cache-Control`, validación de rutas).",
+        "- Correr tests de seguridad (`pytest` o `bandit`).",
+        "- Verificar que el token no se filtre en respuestas cacheadas.",
+        "- Abrir PR con el fix y los tests."
+      ]
+    },
+    {
+      "title": "Recomendaciones",
+      "content": [
+        "- **Priorizar el issue de TENSTORRENT**: Mayor monto ($1,500) y stack conocido (Python/C++).",
+        "- **Verificar tests antes de abrir el PR**: Asegurar que el build y los tests pasen en ambos repos.",
+        "- **Reclamar el bounty al abrir el PR**: Usar `/claim` en el issue (si la plataforma lo soporta)."
+      ]
+    }
+  ]
+}

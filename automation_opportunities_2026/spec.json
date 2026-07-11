@@ -1,0 +1,87 @@
+{
+  "title": "Informe de Oportunidades de Automatización para PYMES 2026",
+  "subtitle": "Ranuk IT Solutions - Julio 2026",
+  "logo": "~/Apps/ranukita-bridge/assets/ranukita-logo.png",
+  "watermark": "~/Apps/ranukita-bridge/assets/minilogo2.png",
+  "sections": [
+    {
+      "title": "Resumen Ejecutivo",
+      "content": [
+        "**Contexto:**",
+        "- 82% de las PYMES usan IA/automatización en 2026 (SBE Council).",
+        "- 57% de las PYMES en EE.UU. invierten en tecnología de IA (Business.com).",
+        "- 80% de los proyectos de IA fracasan por brechas operativas y de stack (RAND).",
+        "- Áreas con mayor demanda: atención al cliente, marketing, ventas, operaciones y CRM.",
+        "**Oportunidades clave:**",
+        "- Desarrollo de soluciones low-code + IA para automatización de procesos.",
+        "- Creación de un Data Hub para resolver silos de datos.",
+        "- Servicios de implementación end-to-end con resultados medibles."
+      ]
+    },
+    {
+      "title": "Áreas con Mayor Demanda",
+      "content": [
+        "**1. Atención al cliente:**",
+        "- Expectativas de respuesta < 5 min, reducción de tickets repetitivos y mejora de NPS.",
+        "**2. Marketing y generación de leads:**",
+        "- Campañas multicanal, lead-scoring en tiempo real y ROI medible.",
+        "**3. Operaciones / Gestión de procesos internos:**",
+        "- Optimización de flujos de trabajo (orden-de-compra, facturación, inventario)."
+      ]
+    },
+    {
+      "title": "Limitaciones de Herramientas Actuales",
+      "content": [
+        "- Falta de personalización profunda.",
+        "- Escalabilidad limitada.",
+        "- Integración fragmentada (silos de datos).",
+        "- Gobernanza y compliance poco claros.",
+        "- Curva de aprendizaje y soporte limitado."
+      ]
+    },
+    {
+      "title": "Propuestas para Ranuk IT Solutions",
+      "content": [
+        "**1. Ranuk Flow Builder:**",
+        "- Plataforma low-code + IA para automatización de procesos.",
+        "**2. Ranuk Data Hub:**",
+        "- Solución para centralizar y sincronizar datos de múltiples fuentes.",
+        "**3. Ranuk Automation-as-a-Service:**",
+        "- Implementación end-to-end con resultados medibles."
+      ]
+    },
+    {
+      "title": "Casos de Éxito Reales",
+      "content": [
+        "**EcoPack S.R.L. (Manufactura):**",
+        "- Reducción del tiempo de procesamiento de 5 días a 2 horas.",
+        "- Disminución de errores de facturación en 96%.",
+        "- Ahorro de costos operativos: US$45k anuales.",
+        "**Digital Media Co. (Marketing):**",
+        "- Incremento de la tasa de conversión de leads del 12% al 22%.",
+        "- Ganancia de ingresos adicionales: US$78k en el primer año."
+      ]
+    },
+    {
+      "title": "Recomendaciones",
+      "content": [
+        "**Roadmap de lanzamiento (90 días):**",
+        "- Validación de mercado: 5 entrevistas a fondo con prospectos.",
+        "- MVP: 2 plantillas de flujo pre-definidas y demo de Data Hub.",
+        "- Piloto comercial: 2 clientes piloto con proyecto de 30 días.",
+        "- Go-to-Market: Campaña en LinkedIn y partnerships con agencias.",
+        "**Canales de adquisición:**",
+        "- LinkedIn, Upwork, Freelancer, Partnerships, Eventos locales."
+      ]
+    },
+    {
+      "title": "Conclusiones",
+      "content": [
+        "**Llamado a la acción:**",
+        "1. Iniciar validación de mercado con entrevistas a prospectos.",
+        "2. Desarrollar MVP con plantillas de flujo y demo de Data Hub.",
+        "3. Lanzar piloto comercial y campaña de marketing."
+      ]
+    }
+  ]
+}

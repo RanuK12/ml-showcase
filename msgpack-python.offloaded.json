@@ -1,0 +1,8 @@
+{
+ "name": "msgpack-python",
+ "archived": "2026-07-11T09:30:41.496948",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/msgpack-python.tar.gz",
+ "orig_mb": 1,
+ "reason": "Fork/bounty puntual; ya mergeado.",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore msgpack-python"
+}
