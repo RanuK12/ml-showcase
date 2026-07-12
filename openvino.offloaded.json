@@ -1,0 +1,8 @@
+{
+ "name": "openvino",
+ "archived": "2026-07-11T19:31:13.292350",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/openvino.tar.gz",
+ "orig_mb": 335,
+ "reason": "335MB, fork/clone de Intel, sin adaptación local",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore openvino"
+}

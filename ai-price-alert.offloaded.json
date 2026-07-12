@@ -1,0 +1,8 @@
+{
+ "name": "ai-price-alert",
+ "archived": "2026-07-12T09:30:49.989886",
+ "drive_path": "/Users/emilioranucoli/OneDrive/Ranuk_Offload/ai-price-alert.tar.gz",
+ "orig_mb": 0,
+ "reason": "Repo vacío, sin contenido ni señales de vida.",
+ "restore": "python3 ~/Apps/ranukita-bridge/scripts/rk-offload.py restore ai-price-alert"
+}
