@@ -4,6 +4,7 @@ Scrape bounties from Algora public listing.
 Uses public /bounties page and extracts bounty cards.
 """
 import csv
+import os
 import re
 import sys
 from pathlib import Path
@@ -13,9 +14,30 @@ from bs4 import BeautifulSoup
 
 OUTPUT_DIR = Path(__file__).parent.resolve()
 CSV_PATH = OUTPUT_DIR / "algora_bounties_v2.csv"
+LOCK_PATH = OUTPUT_DIR / ".bounty_task.lock"
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
 }
+
+
+def acquire_lock() -> bool:
+    """Try to acquire the bounty task lock. Returns True if acquired."""
+    if LOCK_PATH.exists():
+        try:
+            old_pid = int(LOCK_PATH.read_text().strip())
+            os.kill(old_pid, 0)
+            print(f"[!] Bounty task already active (PID {old_pid}). Exiting.", file=sys.stderr)
+            return False
+        except (ValueError, ProcessLookupError, PermissionError):
+            print(f"[*] Removing stale lock file.", file=sys.stderr)
+            LOCK_PATH.unlink(missing_ok=True)
+    LOCK_PATH.write_text(str(os.getpid()))
+    return True
+
+
+def release_lock():
+    """Remove the lock file."""
+    LOCK_PATH.unlink(missing_ok=True)
 
 
 def fetch_bounties_page() -> str | None:
@@ -63,24 +85,30 @@ def _parse_reward(text: str) -> int:
 
 
 def main():
-    html = fetch_bounties_page()
-    if not html:
+    if not acquire_lock():
         return 1
 
-    bounties = parse_bounties(html)
-    if not bounties:
-        print("[!] No bounties found on page.")
-        return 1
+    try:
+        html = fetch_bounties_page()
+        if not html:
+            return 1
 
-    with CSV_PATH.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(
-            f, fieldnames=["org", "repo", "bounty_url", "reward_usd", "status"]
-        )
-        writer.writeheader()
-        writer.writerows(bounties)
+        bounties = parse_bounties(html)
+        if not bounties:
+            print("[!] No bounties found on page.")
+            return 1
 
-    print(f"[✓] Saved {len(bounties)} bounties to {CSV_PATH}")
-    return 0
+        with CSV_PATH.open("w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(
+                f, fieldnames=["org", "repo", "bounty_url", "reward_usd", "status"]
+            )
+            writer.writeheader()
+            writer.writerows(bounties)
+
+        print(f"[✓] Saved {len(bounties)} bounties to {CSV_PATH}")
+        return 0
+    finally:
+        release_lock()
 
 
 if __name__ == "__main__":
