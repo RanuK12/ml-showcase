@@ -1,0 +1,15 @@
+
+## Measurements
+
+| Measurement | Range (cm) |
+|-------------|------------|
+| Sepal Length | 4.3 - 7.9 |
+| Sepal Width | 2.0 - 4.4 |
+| Petal Length | 1.0 - 6.9 |
+| Petal Width | 0.1 - 2.5 |
+
+## Species
+
+- **setosa** - Typically has smaller petals
+- **versicolor** - Medium-sized measurements
+- **virginica** - Typically has larger petals
