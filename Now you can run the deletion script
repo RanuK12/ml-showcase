@@ -1,0 +1,2 @@
+cd ml-showcase
+python delete_erroneous_file.py
